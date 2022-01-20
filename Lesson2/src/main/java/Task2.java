@@ -1,7 +1,7 @@
 public class Task2 {
 
     public class HomeWork {
-        public static void main(String[] args) {
+        public void main(String[] args) {
             //вывод на консоль
             printLiterals();
             //Некоторые тесты для проверки задач.
@@ -11,25 +11,17 @@ public class Task2 {
             System.out.println(calculateHypotenuse(3, 4));
         }
 
-        private static void printLiterals() {
-//        вывести на консоль литералы следующих видов:
+        private void printLiterals() {
 
-
-
-
-
-
-
-//        литерал типа double.
             boolean bool = true;    //        логический
             String a = "String";    //        строковый
             char b = 'b';           //        символьный
             int c = 0b1101;         //        целочисленный 2-й
             int d = 010;            //        целочисленный 8-й
             int e = 514;            //        целочисленный 10-й
-            int f = 0x6F            //        целочисленный 16-й
+            int f = 0x6F;            //        целочисленный 16-й
             float g = 1.2f;         //        литерал типа float
-            double h
+            double h = 1.2;         //        литерал типа double
 
         }
 
@@ -37,7 +29,7 @@ public class Task2 {
          * 1. Метод должен вернуть сумму двух чисел a и b
          * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
          **/
-        public static int sum(int a, int b) {
+        public int sum(int a, int b) {
             return 0;
         }
 
@@ -56,7 +48,7 @@ public class Task2 {
          * <p>
          * Метод должен вернуть 10
          */
-        public static int max(int a, int b) {
+        public int max(int a, int b) {
             return 0;
         }
 
@@ -73,7 +65,7 @@ public class Task2 {
          * 16
          * return 20
          */
-        public static double calculateHypotenuse(int a, int b) {
+        public double calculateHypotenuse(int a, int b) {
             return 0;
         }
     }
