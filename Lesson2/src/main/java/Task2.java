@@ -13,16 +13,24 @@ public class Task2 {
 
         private void printLiterals() {
 
-            boolean bool = true;    //        логический
-            String a = "String";    //        строковый
-            char b = 'b';           //        символьный
-            int c = 0b1101;         //        целочисленный 2-й
-            int d = 010;            //        целочисленный 8-й
-            int e = 514;            //        целочисленный 10-й
-            int f = 0x6F;            //        целочисленный 16-й
-            float g = 1.2f;         //        литерал типа float
-            double h = 1.2;         //        литерал типа double
-
+            boolean a = true;    //        логический
+            String b = "String";    //        строковый
+            char c = 'b';           //        символьный
+            int d = 0b1101;         //        целочисленный 2-й
+            int e = 010;            //        целочисленный 8-й
+            int f = 514;            //        целочисленный 10-й
+            int g = 0x6F;            //        целочисленный 16-й
+            float h = 1.2f;         //        литерал типа float
+            double i = 1.2;         //        литерал типа double
+            System.out.println(a);
+            System.out.println(b);
+            System.out.println(c);
+            System.out.println(d);
+            System.out.println(e);
+            System.out.println(f);
+            System.out.println(g);
+            System.out.println(h);
+            System.out.println(i);
         }
 
         /**
