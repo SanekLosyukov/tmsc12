@@ -4,11 +4,11 @@ public class Task2 {
         //вывод на консоль
         printLiterals();
         //Некоторые тесты для проверки задач.
-/*        System.out.println(sum(100, 200));
+        System.out.println(sum(100, 200));
         System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        System.out.println(max(56, 349));
-        System.out.println(calculateHypotenuse(3, 4));
-        */
+        /*System.out.println(max(56, 349));
+        System.out.println(calculateHypotenuse(3, 4));*/
+
 
     }
 
@@ -38,9 +38,12 @@ public class Task2 {
      * 1. Метод должен вернуть сумму двух чисел a и b
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
-    //public static sum(int a, int b) {
-    //    return 0;
-    // }
+    public static int sum(int a, int b) {
+        long c = (long) a + b;
+        if (c > Integer.MAX_VALUE)
+            return -1;
+        else return a + b;
+    }
 
     /**
      * Метод должен вернуть максимальное значение из двух чисел
