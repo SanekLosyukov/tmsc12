@@ -9,10 +9,11 @@ public class Task3 {
     private static void printAlphabet() {
 
         char alpha = 'a';
-        System.out.println("alpha = " + alpha);
-        //for (int i = 1; i < 26; i++) {
-
-        //}
+        System.out.println(alpha);
+        for (int i = 1; i < 26; i++) {
+            alpha++;
+            System.out.println(alpha);
+        }
     }
 
 
