@@ -1,30 +1,68 @@
+import java.util.Scanner;
+
 public class Task3 {
 
     public static void main(String[] args) {
-        printAlphabet();
-
+        // printAlphabet();
+        // findChet();
+        // modul();
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
+
     private static void printAlphabet() {
 
         char alpha = 'a';
-        System.out.println(alpha);
+        System.out.print(alpha + "\t");
         for (int i = 1; i < 26; i++) {
             alpha++;
-            System.out.println(alpha);
+            System.out.print(alpha + "\t");
         }
     }
-
 
     //2)Проверка четности числа
     //Создать программу, которая будет сообщать, является ли целое число, введённое пользователем,
     // чётным или нет. Ввод числа осуществлять с помощью класса Scanner.
     // Если пользователь введёт не целое число, то сообщать ему об ошибке.
 
+    public static void findChet() {
+
+        System.out.println("\n Введите целое число");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        try {
+            if (a > 0) {
+                System.out.println("Число является четным");
+            } else {
+                System.out.println("Число является нечетным");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
     //3) Меньшее по модулю число
     //Создать программу, которая будет выводить на экран меньшее по модулю из трёх введённых
     // пользователем вещественных чисел с консоли.
+    public static void modul() {
+        Scanner scan = new Scanner(System.in);
+        int[] array = new int[3];
+
+        System.out.println("Введите первое число");
+        array[0] = scan.nextInt();
+        System.out.println("Введите второе число");
+        array[1] = scan.nextInt();
+        System.out.println("Введите третье число");
+        array[2] = scan.nextInt();
+
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (Math.abs(array[i]) < min) {
+                min = Math.abs(array[i]);
+            }
+        }
+        System.out.println("Минимальное значение по модулю" + min);
+    }
 
     //4) На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,
     // оставшихся до конца рабочего дня. Когда рабочий день начинается ровно в 9 часов утра — табло отображает «28800» (т.е. остаётся 8 часов),
@@ -63,17 +101,17 @@ public class Task3 {
      * array = {1,2,3,4,5}
      * Метод должен return 3.0
      */
-    public static double average(int[] array) {
+    /*public static double average(int[] array) {
         return 0;
     }
 
     /**
      * 7) Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
      **/
-    public static int max(int[] array) {
-        return 0;
-    }
+    /*public static int max(int[] array) {
+        return 0;*/
 }
+
 
 
 
