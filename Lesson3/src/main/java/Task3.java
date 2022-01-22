@@ -7,6 +7,8 @@ public class Task3 {
         // findChet();
         // modul();
         // clock();
+        //
+        System.out.println(average());
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -112,9 +114,18 @@ public class Task3 {
      * Example:
      * array = {1,2,3,4,5}
      * Метод должен return 3.0
+     *
+     * @return
      */
-    /*public static double average(int[] array) {
-        return 0;
+    public static double average() {
+
+        int [] array = new int[]{1, 2, 3, 4, 5};
+        double summ = 0;
+        for (int i = 1; i <= array.length; i++) {
+            summ += array[i - 1];
+        }
+        double result = summ / array.length;
+        return result;
     }
 
     /**
