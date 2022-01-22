@@ -109,6 +109,11 @@ public class Task3 {
 //    т  - если преобразование тождественно.
 //    Внимание! используйте System.out.printLn
 
+    public static void table() {
+        System.out.println("/t byte /t short /t char /t int /t long /t  ");
+    }
+
+
     /**
      * 6) Метод должен вернуть среднее значение из массива чисел
      * (необходимо сумму всех элеменов массива разделить на длину массива)
