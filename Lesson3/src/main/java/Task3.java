@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class Task3 {
 
     public static void main(String[] args) {
+
         // printAlphabet();
         // findChet();
         // modul();
         // clock();
         //
-        System.out.println(average());
+        //System.out.println(average());
+        System.out.println(max());
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -119,7 +121,7 @@ public class Task3 {
      */
     public static double average() {
 
-        int [] array = new int[]{1, 2, 3, 4, 5};
+        int[] array = new int[]{1, 2, 3, 4, 5};
         double summ = 0;
         for (int i = 1; i <= array.length; i++) {
             summ += array[i - 1];
@@ -131,8 +133,19 @@ public class Task3 {
     /**
      * 7) Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
      **/
-    /*public static int max(int[] array) {
-        return 0;*/
+
+    public static int max() {
+
+        int[] array = new int[]{1, 2, 10, 3};
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
 }
 
 
