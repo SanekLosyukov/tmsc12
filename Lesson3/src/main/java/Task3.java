@@ -6,7 +6,7 @@ public class Task3 {
         // printAlphabet();
         // findChet();
         // modul();
-        chasy();
+        // chasy();
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -45,7 +45,9 @@ public class Task3 {
     //3) Меньшее по модулю число
     //Создать программу, которая будет выводить на экран меньшее по модулю из трёх введённых
     // пользователем вещественных чисел с консоли.
+
     public static void modul() {
+
         Scanner scan = new Scanner(System.in);
         int[] array = new int[3];
 
@@ -75,19 +77,18 @@ public class Task3 {
     //Итак, в переменную n должно записываться случайное (на время тестирования программы) целое число из [0;28800],
     // далее оно должно выводиться на экран (для Петрова) и на следующей строке (для сотрудниц) должна
     // выводиться фраза о количестве полных часов, содержащихся в n секундах.
-    public static void chasy() {
 
-        int[] array = new int[8];
+    public static void clock() {
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i]+ 3600;
-        }
-        System.out.print(array);
-        //int n
-
-
+        int min = 0;
+        int max = 28800;
+        int n = (int) (min + Math.random() * max);
+        int hour = n / 3600;
+        System.out.println("Осталось: " + n + " секунд. Полных часов: " + hour);
 
     }
+
+
     //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
 //              byte	short	char	int 	long	float	double	boolean
 //    byte
