@@ -6,6 +6,7 @@ public class Task3 {
         // printAlphabet();
         // findChet();
         // modul();
+        chasy();
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -75,6 +76,18 @@ public class Task3 {
     // далее оно должно выводиться на экран (для Петрова) и на следующей строке (для сотрудниц) должна
     // выводиться фраза о количестве полных часов, содержащихся в n секундах.
     public static void chasy() {
+
+        int[] array = new int[8];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = array[i]+ 3600;
+        }
+        System.out.print(array);
+        //int n
+
+
+
+    }
     //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
 //              byte	short	char	int 	long	float	double	boolean
 //    byte
