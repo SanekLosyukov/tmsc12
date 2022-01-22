@@ -6,7 +6,7 @@ public class Task3 {
         // printAlphabet();
         // findChet();
         // modul();
-        // chasy();
+        // clock();
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -85,9 +85,7 @@ public class Task3 {
         int n = (int) (min + Math.random() * max);
         int hour = n / 3600;
         System.out.println("Осталось: " + n + " секунд. Полных часов: " + hour);
-
     }
-
 
     //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
 //              byte	short	char	int 	long	float	double	boolean
