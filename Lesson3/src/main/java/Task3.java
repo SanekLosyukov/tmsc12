@@ -4,12 +4,12 @@ public class Task3 {
 
     public static void main(String[] args) {
 
-        // printAlphabet();
-        // findChet();
-        // modul();
-        // clock();
-        //
-        //System.out.println(average());
+        printAlphabet();
+        findChet();
+        module();
+        clock();
+        table();
+        System.out.println(average());
         System.out.println(max());
     }
 
@@ -42,7 +42,7 @@ public class Task3 {
                 System.out.println("Число является нечетным");
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("Ошибка");
         }
     }
 
@@ -50,7 +50,7 @@ public class Task3 {
     //Создать программу, которая будет выводить на экран меньшее по модулю из трёх введённых
     // пользователем вещественных чисел с консоли.
 
-    public static void modul() {
+    public static void module() {
 
         Scanner scan = new Scanner(System.in);
         int[] array = new int[3];
@@ -63,12 +63,12 @@ public class Task3 {
         array[2] = scan.nextInt();
 
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            if (Math.abs(array[i]) < min) {
-                min = Math.abs(array[i]);
+        for (int value : array) {
+            if (Math.abs(value) < min) {
+                min = Math.abs(value);
             }
         }
-        System.out.println("Минимальное значение по модулю" + min);
+        System.out.println("Минимальное значение по модулю: " + min);
     }
 
     //4) На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,
@@ -110,9 +110,18 @@ public class Task3 {
 //    Внимание! используйте System.out.printLn
 
     public static void table() {
-        System.out.println("/t byte /t short /t char /t int /t long /t  ");
-    }
 
+        System.out.println("                          ТАБЛИЦА ПРИВЕДЕНИЯ ТИПОВ               ");
+        System.out.println("        byte   short   char   int    long  float  double boolean ");
+        System.out.println("byte      Т      НЯ     X      НЯ     НЯ     Я      Я       X    ");
+        System.out.println("short     НЯ     Т      X      НЯ     НЯ     Я      Я       X    ");
+        System.out.println("char      X      X      Т      X      X      X      X       X    ");
+        System.out.println("int       НЯ     НЯ     X      Т      НЯ     Я      Я       X    ");
+        System.out.println("long      НЯ     НЯ     X      НЯ     Т      Я      Я       X    ");
+        System.out.println("float     Я      Я      Я      Я      Я      Т      HЯ      X    ");
+        System.out.println("double    Я      Я      Я      Я      Я      НЯ     Т       X    ");
+        System.out.println("boolean   X      X      X      X      X      X      X       Т    ");
+    }
 
 
     /**
@@ -123,17 +132,17 @@ public class Task3 {
      * array = {1,2,3,4,5}
      * Метод должен return 3.0
      *
-     * @return
+     * return
      */
     public static double average() {
 
         int[] array = new int[]{1, 2, 3, 4, 5};
-        double summ = 0;
+        double sum = 0;
         for (int i = 1; i <= array.length; i++) {
-            summ += array[i - 1];
+            sum += array[i - 1];
         }
-        double result = summ / array.length;
-        return result;
+        sum = sum / array.length;
+        return sum;
     }
 
     /**
@@ -144,9 +153,9 @@ public class Task3 {
 
         int[] array = new int[]{1, 2, 10, 3};
         int max = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
+        for (int value : array) {
+            if (value > max) {
+                max = value;
             }
         }
         return max;
