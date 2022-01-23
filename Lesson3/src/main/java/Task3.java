@@ -115,11 +115,11 @@ public class Task3 {
         System.out.println("        byte   short   char   int    long  float  double boolean ");
         System.out.println("byte      Т      НЯ     X      НЯ     НЯ     Я      Я       X    ");
         System.out.println("short     НЯ     Т      X      НЯ     НЯ     Я      Я       X    ");
-        System.out.println("char      X      X      Т      X      X      X      X       X    ");
-        System.out.println("int       НЯ     НЯ     X      Т      НЯ     Я      HЯ      X    ");
-        System.out.println("long      НЯ     НЯ     X      НЯ     Т      Я      Я       X    ");
-        System.out.println("float     Я      Я      Я      Я      Я      Т      HЯ      X    ");
-        System.out.println("double    Я      Я      Я      HЯ     Я      НЯ     Т       X    ");
+        System.out.println("char      X      X      Т      НЯ     НЯ     X      X       X    ");
+        System.out.println("int       НЯ     НЯ     НЯ     Т      НЯ     Я      HЯ      X    ");
+        System.out.println("long      НЯ     НЯ     НЯ     НЯ     Т      Я      Я       X    ");
+        System.out.println("float     Я      Я      Х      Я      Я      Т      HЯ      X    ");
+        System.out.println("double    Я      Я      Х      HЯ     Я      НЯ     Т       X    ");
         System.out.println("boolean   X      X      X      X      X      X      X       Т    ");
     }
 
