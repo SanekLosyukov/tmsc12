@@ -3,7 +3,7 @@
 .idea
 target
 *.iml
-.iml
+
 
 # Log file
 *.log
