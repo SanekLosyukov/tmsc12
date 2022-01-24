@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Task3 {
@@ -11,18 +12,18 @@ public class Task3 {
         table();
         System.out.println(average());
         System.out.println(max());
+
     }
 
-    //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
+    //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита.
 
     private static void printAlphabet() {
 
         char alpha = 'a';
-        System.out.print(alpha + "\t");
-        for (int i = 1; i < 26; i++) {
-            alpha++;
-            System.out.print(alpha + "\t");
+        for (int i = 0; i < 26; i++) {
+            System.out.print(alpha++ + "\t");
         }
+
     }
 
     //2)Проверка четности числа
@@ -34,16 +35,17 @@ public class Task3 {
 
         System.out.println("\n Введите целое число");
         Scanner scan = new Scanner(System.in);
-        int a = scan.nextInt();
-        try {
-            if (a > 0) {
+        if (scan.hasNextInt()) {
+            int a = scan.nextInt();
+            if (a % 2 == 0) {
                 System.out.println("Число является четным");
             } else {
                 System.out.println("Число является нечетным");
             }
-        } catch (Exception ex) {
-            System.out.println("Ошибка");
+        } else {
+            System.out.println("Вы не ввели целое число! " + scan);
         }
+
     }
 
     //3) Меньшее по модулю число
@@ -64,11 +66,12 @@ public class Task3 {
 
         int min = Integer.MAX_VALUE;
         for (int value : array) {
-            if (Math.abs(value) < min) {
+            if (min > Math.abs(value)) {
                 min = Math.abs(value);
             }
         }
         System.out.println("Минимальное значение по модулю: " + min);
+
     }
 
     //4) На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,
@@ -84,11 +87,11 @@ public class Task3 {
 
     public static void clock() {
 
-        int min = 0;
-        int max = 28800;
-        int n = (int) (min + Math.random() * max);
-        int hour = n / 3600;
-        System.out.println("Осталось: " + n + " секунд. Полных часов: " + hour);
+        int[] array = new int[28801];
+        int sec = new Random().nextInt(array.length);
+        int hour = sec / 3600;
+        System.out.println("Осталось: " + sec + " секунд. Полных часов: " + hour);
+
     }
 
     //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
@@ -113,16 +116,16 @@ public class Task3 {
 
         System.out.println("                          ТАБЛИЦА ПРИВЕДЕНИЯ ТИПОВ               ");
         System.out.println("        byte   short   char   int    long  float  double boolean ");
-        System.out.println("byte      Т      НЯ     X      НЯ     НЯ     Я      Я       X    ");
-        System.out.println("short     НЯ     Т      X      НЯ     НЯ     Я      Я       X    ");
-        System.out.println("char      X      X      Т      X      X      X      X       X    ");
-        System.out.println("int       НЯ     НЯ     X      Т      НЯ     Я      Я       X    ");
-        System.out.println("long      НЯ     НЯ     X      НЯ     Т      Я      Я       X    ");
-        System.out.println("float     Я      Я      Я      Я      Я      Т      HЯ      X    ");
-        System.out.println("double    Я      Я      Я      Я      Я      НЯ     Т       X    ");
-        System.out.println("boolean   X      X      X      X      X      X      X       Т    ");
-    }
+        System.out.println("byte      Т      НЯ     Я      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("short     Я      Т      Я      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("char      Я      Я      Т      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("int       Я      Я      Я      Т      НЯ    НЯ     HЯ       X    ");
+        System.out.println("long      Я      Я      Я      Я      Т     НЯ     НЯ       X    ");
+        System.out.println("float     Я      Я      Я      Я      Я     Т      HЯ       X    ");
+        System.out.println("double    Я      Я      Я      Я      Я     Я      Т        X    ");
+        System.out.println("boolean   X      X      X      X      X     X      X        Т    ");
 
+    }
 
     /**
      * 6) Метод должен вернуть среднее значение из массива чисел
@@ -131,18 +134,20 @@ public class Task3 {
      * Example:
      * array = {1,2,3,4,5}
      * Метод должен return 3.0
-     *
+     * <p>
      * return
      */
+
     public static double average() {
 
         int[] array = new int[]{1, 2, 3, 4, 5};
         double sum = 0;
-        for (int i = 1; i <= array.length; i++) {
-            sum += array[i - 1];
+        for (int value : array) {
+            sum += value;
         }
         sum = sum / array.length;
         return sum;
+
     }
 
     /**
@@ -152,13 +157,14 @@ public class Task3 {
     public static int max() {
 
         int[] array = new int[]{1, 2, 10, 3};
-        int max = 0;
+        int max = array[0];
         for (int value : array) {
             if (value > max) {
                 max = value;
             }
         }
         return max;
+
     }
 
 }
