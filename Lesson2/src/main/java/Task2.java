@@ -6,6 +6,7 @@ public class Task2 {
         System.out.println(sum(Integer.MAX_VALUE, Integer.MAX_VALUE));
         System.out.println(max(56, 349));
         System.out.println(calculateHypotenuse(3, 4));
+
     }
 
     private static void printLiterals() {
@@ -28,25 +29,35 @@ public class Task2 {
         System.out.println(g);
         System.out.println(h);
         System.out.println(i);
+
     }
 
     public static int sum(int a, int b) {
+
         long c = (long) a + b;
-        if (c > Integer.MAX_VALUE)
+        if (c > Integer.MAX_VALUE) {
             return -1;
-        else return a + b;
+        } else {
+            return a + b;
+        }
+
     }
 
     public static int max(int a, int b) {
-        if (a > b)
+
+        if (a > b) {
             return a;
-        else return b;
+        } else {
+            return b;
+        }
+
     }
 
     public static double calculateHypotenuse(int a, int b) {
-        double c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-        return c;
+
+        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     }
+
 }
 
 
