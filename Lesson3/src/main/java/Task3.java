@@ -5,13 +5,14 @@ public class Task3 {
 
     public static void main(String[] args) {
 
-        //printAlphabet();
-        //findChet();
-        //module();
-        //clock();
-        //table();
-        //System.out.println(average());
+        printAlphabet();
+        findChet();
+        module();
+        clock();
+        table();
+        System.out.println(average());
         System.out.println(max());
+
     }
 
     //1) Используя тип данных char и операцию инкремента вывести на консоль все буквы английского алфавита
@@ -22,6 +23,7 @@ public class Task3 {
         for (int i = 0; i < 26; i++) {
             System.out.print(alpha++ + "\t");
         }
+
     }
 
     //2)Проверка четности числа
@@ -69,6 +71,7 @@ public class Task3 {
             }
         }
         System.out.println("Минимальное значение по модулю: " + min);
+
     }
 
     //4) На некотором предприятии инженер Петров создал устройство, на табло которого показывается количество секунд,
@@ -83,10 +86,12 @@ public class Task3 {
     // выводиться фраза о количестве полных часов, содержащихся в n секундах.
 
     public static void clock() {
+
         int[] array = new int[28801];
         int sec = new Random().nextInt(array.length);
         int hour = sec / 3600;
         System.out.println("Осталось: " + sec + " секунд. Полных часов: " + hour);
+
     }
 
     //5) Необходимо написать программу, которая будет выводить на консоль таблицу приведения типов!
@@ -111,16 +116,16 @@ public class Task3 {
 
         System.out.println("                          ТАБЛИЦА ПРИВЕДЕНИЯ ТИПОВ               ");
         System.out.println("        byte   short   char   int    long  float  double boolean ");
-        System.out.println("byte      Т      НЯ     X      НЯ     НЯ     Я      Я       X    ");
-        System.out.println("short     НЯ     Т      X      НЯ     НЯ     Я      Я       X    ");
-        System.out.println("char      X      X      Т      НЯ     НЯ     X      X       X    ");
-        System.out.println("int       НЯ     НЯ     НЯ     Т      НЯ     Я      HЯ      X    ");
-        System.out.println("long      НЯ     НЯ     НЯ     НЯ     Т      Я      Я       X    ");
-        System.out.println("float     Я      Я      Х      Я      Я      Т      HЯ      X    ");
-        System.out.println("double    Я      Я      Х      HЯ     Я      НЯ     Т       X    ");
-        System.out.println("boolean   X      X      X      X      X      X      X       Т    ");
-    }
+        System.out.println("byte      Т      НЯ     Я      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("short     Я      Т      Я      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("char      Я      Я      Т      НЯ     НЯ    НЯ     НЯ       X    ");
+        System.out.println("int       Я      Я      Я      Т      НЯ    НЯ     HЯ       X    ");
+        System.out.println("long      Я      Я      Я      Я      Т     НЯ     НЯ       X    ");
+        System.out.println("float     Я      Я      Я      Я      Я     Т      HЯ       X    ");
+        System.out.println("double    Я      Я      Я      Я      Я     Я      Т        X    ");
+        System.out.println("boolean   X      X      X      X      X     X      X        Т    ");
 
+    }
 
     /**
      * 6) Метод должен вернуть среднее значение из массива чисел
@@ -132,6 +137,7 @@ public class Task3 {
      * <p>
      * return
      */
+
     public static double average() {
 
         int[] array = new int[]{1, 2, 3, 4, 5};
@@ -158,6 +164,7 @@ public class Task3 {
             }
         }
         return max;
+
     }
 
 }
