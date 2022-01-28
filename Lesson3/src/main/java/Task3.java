@@ -6,12 +6,12 @@ public class Task3 {
     public static void main(String[] args) {
 
         printAlphabet();
-        findChet();
-        module();
-        clock();
-        table();
-        System.out.println(average());
-        System.out.println(max());
+//        findChet();
+//        module();
+//        clock();
+//        table();
+//        System.out.println(average());
+//        System.out.println(max());
 
     }
 
