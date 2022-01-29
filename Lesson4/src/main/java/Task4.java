@@ -4,10 +4,15 @@ import java.util.Scanner;
 public class Task4 {
 
     public static void main(String[] args) {
-//        dniNedeli();
-//        System.out.println("Количство амёб " + amoeba());
-//        cifry();
+        dniNedeli();
+        System.out.println("Количство амёб " + amoeba());
+        cifry();
         znakZodiaka();
+        printArray();
+        System.out.println(num(-25));
+        System.out.println("Количество нечетных чисел в массиве " + massive());
+        stroki(15);
+        operation();
     }
 
 //1) Задача на оператор switch!
@@ -127,33 +132,8 @@ public class Task4 {
         }
     }
 
-//    Овен (21 марта – 20 апреля)
-//    Телец (21 апреля – 21 мая) ...
-//    Близнецы (22 мая – 21 июня) ...
-//    Рак (22 июня – 22 июля) ...
-//    Лев (23 июля – 21 августа) ...
-//    Дева (22 августа – 23 сентября) ...
-//    Весы (24 сентября – 23 октября) ...
-//    Скорпион (24 октября – 23 ноября)
-//    Стрелец (23 ноября — 22 декабря)
-//    Козерог (23 декабря — 20 января)
-//    Водолей (21 января — 19 февраля)
-//    Рыбы (20 февраля — 20 марта)
-    //Некоторые тесты для проверки задач. Можно также написать свои тесты.
-//            printArray();
-//            System.out.println(operation(1));
-//            System.out.println(operation(0));
-//            System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
-//            countDevs(103);
-//            countDevs(11);
-//            foobar(6);
-//            foobar(10);
-//            foobar(15);
-//            printPrimeNumbers();
-//        }
-
-
-    /**5)
+    /**
+     * 5)
      * Необходимо прочитать с консоли значение числа типа int,
      * сделать проверку что если пользователь ввел не положительное число,
      * то вывести ошибку и отправить пользователя вводить заново новое число!
@@ -161,62 +141,110 @@ public class Task4 {
      * далее заполнить массив случайными значениями
      * далее вывести массив на консоль
      */
-//    private static void printArray() {
-//        // тут пишем логику
-//    }
+    private static void printArray() {
+        System.out.println("Введите положительное число");
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        if (a > 0) {
+            int[] array = new int[a];
+            Random random = new Random();
+            for (int i = 0; i < array.length; i++) {
+                array[i] = random.nextInt(array.length);
+                System.out.print(array[i] + " ");
+            }
+        } else {
+            System.out.println("Вы ввели не положительное число. Введите положительное число");
+            scanner.next();
+        }
+    }
 
-    /**6)
-     * Метод должен выполнять некоторую операцию с int "number" в зависимости от некоторых условий:
-     * - if number положительное число, то необходимо number увеличить на 1
-     * - if number отрицательное - уменьшить на 2
-     * - if number равно 0 , то замените значение number на 10
-     * вернуть number после выполнения операций
-     */
-//    public static int operation(int number) {
-//        // тут пишем логику
-//        return 0;
-//    }
 
-    /**7)
-     * На вход приходит массив целых чисел типа int
-     * Необходимо найти количество нечетных элементов в массиве и вернуть значение в метод main,
-     * в котором это значение распечатается на консоль.
-     */
-//    public static int calculateCountOfOddElementsInMatrix(int[] ints) {
-//        // тут пишем логику
-//        return 0;
-//    }
+// * 6)
+// * Метод должен выполнять некоторую операцию с int "number" в зависимости от некоторых условий:
+// * - if number положительное число, то необходимо number увеличить на 1
+// * - if number отрицательное - уменьшить на 2
+// * - if number равно 0 , то замените значение number на 10
+// * вернуть number после выполнения операций
 
-//    /**8)
-//     * На вход приходит число.
-//     * Вывести в консоль фразу из разряда "_COUNT_ программистов",
-//     * заменить _COUNT_ на число которое пришло на вход в метод и заменить окончание в слове "программистов" на
-//     * уместное с точки зрения русского языка.
-//     * Пример: 1 программист, 42 программиста, 50 программистов
-//     *
-//     * @param count - количество программистов
-//     */
-//    public static void countDevs(int count) {
-//        // тут пишем логику
-//    }
+    public static int num(int number) {
+        if (number > 0) {
+            number = ++number;
+        } else {
+            if (number == 0) {
+                number = 10;
+            } else {
+                number = number - 2;
+            }
+        }
+        return number;
+    }
 
-    /**9)
-     * Метод должен выводить разные строки в консоли в зависимости от некоторых условий:
-     * - если остаток от деления на 3 равен нулю - выведите "foo" (example of number - 6)
-     * - если остаток от деления на 5 равен нулю - вывести "bar" (example of number - 10)
-     * - если остаток от деления на 3 и 5 равен нулю 0 ,то вывести "foobar" (example of number - 15)
-     */
-//    public static void foobar(int number) {
-//        // тут пишем логику
-//    }
 
-    /**10)
-     * Задача со звездочкой!
-     * Метод должен печатать все простые числа <1000
-     * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
-     //     */
-//    public static void printPrimeNumbers() {
-//        // тут пишем логику
-//    }
+// * 7)
+// * На вход приходит массив целых чисел типа int
+// * Необходимо найти количество нечетных элементов в массиве и вернуть значение в метод main,
+// * в котором это значение распечатается на консоль.
+
+    public static int massive() {
+        int result = 0;
+        int[] array = new int[10];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(array.length);
+        }
+        for (int i : array) {
+            if (!(array[i] % 2 == 0)) {
+                result++;
+            }
+        }
+        return result;
+    }
+
+    // * 8)
+// * Метод должен выводить разные строки в консоли в зависимости от некоторых условий:
+// * - если остаток от деления на 3 равен нулю - выведите "foo" (example of number - 6)
+// * - если остаток от деления на 5 равен нулю - вывести "bar" (example of number - 10)
+// * - если остаток от деления на 3 и 5 равен нулю 0 ,то вывести "foobar" (example of number - 15)
+    private static void foo() {
+        System.out.print("foo");
+    }
+
+    private static void bar() {
+        System.out.print("bar");
+    }
+
+    private static void stroki(int number) {
+        if (number % 3 == 0 && number % 5 == 0) {
+            foo();
+            bar();
+        } else {
+            if (number % 3 == 0) {
+                foo();
+            } else {
+                if (number % 5 == 0) {
+                    bar();
+                }
+            }
+        }
+    }
+
+    // * 9)
+// * Задача со звездочкой!
+// * Метод должен печатать все простые числа <1000
+// * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
+// * //
+// */
+    public static void operation() {
+        int[] array = new int[1001];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+        System.out.print("2 5 7");
+        for (int i : array) {
+            if (array[i] != 1 && !(array[i] % 2 == 0) && !(array[i] % 3 == 0) && !(array[i] % 5 == 0) && !(array[i] % 7 == 0)) {
+                System.out.print(" " + array[i]);
+            }
+        }
+    }
 }
 
