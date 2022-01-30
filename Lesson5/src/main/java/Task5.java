@@ -14,7 +14,6 @@ public class Task5 {
         proverkaElementov();
         printMatrix();
         calculateSumOfDiagonalElements();
-
     }
 
     //        1) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
@@ -46,7 +45,7 @@ public class Task5 {
 //            * *        * *
 //              *        *
     public static void treug() {
-        String Array[][] = {
+        String[][] array = {
                 {"       *        *       "},
                 {"     * *        * *     "},
                 {"   * * *        * * *   "},
@@ -59,9 +58,9 @@ public class Task5 {
                 {"     * *        * *     "},
                 {"       *        *       "},
         };
-        for (int i = 0; i < Array.length; i++) {
-            for (int j = 0; j < Array[i].length; j++) {
-                System.out.print(Array[i][j] + " ");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
             }
             System.out.println();
         }
@@ -158,7 +157,7 @@ public class Task5 {
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
     public static void proverkaElementov() {
-        int[] array = new int[]{0, 0, 46, 46, 20, 1, 28};
+        int[] array = new int[]{0, 3, 46, 3, 2, 1, 2};
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] == array[j]) {
@@ -189,7 +188,7 @@ public class Task5 {
                 array[i][j] = random.nextInt(51);
                 System.out.print(array[i][j] + " ");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
         System.out.println("");
         int[][] transp = new int[b][a];
