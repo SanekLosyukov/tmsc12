@@ -209,25 +209,25 @@ public class Task4 {
 
 }
 
-
-    // * 9)
+//В РАЗРАБОТКЕ
+// * 9)
 // * Задача со звездочкой!
 // * Метод должен печатать все простые числа <1000
 // * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
 // * //
 // */
-    public static void operation() {
-        int[] array = new int[1001];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i;
-        }
-        System.out.print("2 5 7");
-        for (int i : array) {
-            if (array[i] != 1 && !(array[i] % 2 == 0) && !(array[i] % 3 == 0) && !(array[i] % 5 == 0) && !(array[i] % 7 == 0)) {
-                System.out.print(" " + array[i]);
-            }
-        }
-    }
-}
+//    public static void operation() {
+//        int[] array = new int[1001];
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = i;
+//        }
+//        System.out.print("2 5 7");
+//        for (int i : array) {
+//            if (array[i] != 1 && !(array[i] % 2 == 0) && !(array[i] % 3 == 0) && !(array[i] % 5 == 0) && !(array[i] % 7 == 0)) {
+//                System.out.print(" " + array[i]);
+//            }
+//        }
+//    }
+//}
 
 
