@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class Task4 {
 
     public static void main(String[] args) {
-        dniNedeli();
-        System.out.println("Количство амёб " + amoeba());
-        cifry();
-        znakZodiaka();
-        printArray();
-        System.out.println(num(-25));
-        System.out.println("Количество нечетных чисел в массиве " + massive());
-        stroki(15);
+//        dniNedeli();
+//        System.out.println("Количство амёб " + amoeba());
+//        cifry();
+//        znakZodiaka();
+//        printArray();
+//        System.out.println(num(-25));
+//        System.out.println("Количество нечетных чисел в массиве " + massive());
+//        stroki(15);
         operation();
     }
 
