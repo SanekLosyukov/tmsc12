@@ -6,13 +6,16 @@ public class Task4 {
     public static void main(String[] args) {
 //        dniNedeli();
 //        System.out.println("Количство амёб " + amoeba());
-//        cifry();
+
+        cifry();
+
 //        znakZodiaka();
 //        printArray();
 //        System.out.println(num(-25));
 //        System.out.println("Количество нечетных чисел в массиве " + massive());
 //        stroki(15);
-        operation();
+
+//        operation();
     }
 
 //1) Задача на оператор switch!
@@ -21,8 +24,7 @@ public class Task4 {
 //        Если 6 или 7 – “Выходной”.
 
     public static void dniNedeli() {
-        int[] array = new int[7];
-        int rand = new Random().nextInt(array.length);
+        int rand = new Random().nextInt(8);
         switch (rand) {
             case 1:
                 System.out.println("Рандомное число " + rand + ". Это понедельник");
@@ -40,8 +42,6 @@ public class Task4 {
                 System.out.println("Рандомное число " + rand + ". Это пятница");
                 break;
             case 6:
-                System.out.println("Рандомное число " + rand + ". Это выходные");
-                break;
             case 7:
                 System.out.println("Рандомное число " + rand + ". Это выходные");
                 break;
@@ -67,12 +67,19 @@ public class Task4 {
         System.out.println("Введите число");
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
+        if (a == 0) {
+            do {
+                System.out.println("Вы ввели 0. Это не положительное и не отрицательное. Снова введите число");
+                scanner.next();
+            }
+            while (a != 0);
+        }
         if (a > 0) {
             System.out.println("Число положительное");
-        } else {
+        } else if (a < 0) {
             System.out.println("Число отрицательное");
         }
-        String b = Integer.toString(a);
+        String b = Integer.toString(Math.abs(a));
         System.out.println("Количество цифр: " + b.length());
     }
 
@@ -85,52 +92,31 @@ public class Task4 {
         int month = scanner.nextInt();
         if ((month == 1 && day >= 21 && day <= 31) || (month == 2 && day >= 1 && day <= 19)) {
             System.out.println("Водолей");
-        } else {
-            if ((month == 2 && day >= 20 && day <= 28) || (month == 3 && day >= 1 && day <= 20)) {
-                System.out.println("Рыбы");
-            } else {
-                if ((month == 3 && day >= 21 && day <= 31) || (month == 4 && day >= 1 && day <= 20)) {
-                    System.out.println("Овен");
-                } else {
-                    if ((month == 4 && day >= 21 && day <= 30) || (month == 5 && day >= 1 && day <= 21)) {
-                        System.out.println("Телец");
-                    } else {
-                        if ((month == 5 && day >= 22 && day <= 31) || (month == 6 && day >= 1 && day <= 21)) {
-                            System.out.println("Близнецы");
-                        } else {
-                            if ((month == 6 && day >= 22 && day <= 30) || (month == 7 && day >= 1 && day <= 22)) {
-                                System.out.println("Рак");
-                            } else {
-                                if ((month == 7 && day >= 23 && day <= 31) || (month == 8 && day >= 1 && day <= 21)) {
-                                    System.out.println("Лев");
-                                } else {
-                                    if ((month == 8 && day >= 22 && day <= 31) || (month == 9 && day >= 1 && day <= 23)) {
-                                        System.out.println("Дева");
-                                    } else {
-                                        if ((month == 9 && day >= 24 && day <= 30) || (month == 10 && day >= 1 && day <= 23)) {
-                                            System.out.println("Весы");
-                                        } else {
-                                            if ((month == 10 && day >= 24 && day <= 31) || (month == 11 && day >= 1 && day <= 23)) {
-                                                System.out.println("Скорпион");
-                                            } else {
-                                                if ((month == 11 && day >= 24 && day <= 30) || (month == 12 && day >= 1 && day <= 22)) {
-                                                    System.out.println("Телец");
-                                                } else {
-                                                    if ((month == 12 && day >= 23 && day <= 31) || (month == 1 && day >= 1 && day <= 20)) {
-                                                        System.out.println("Козерог");
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        } else if ((month == 2 && day >= 20 && day <= 28) || (month == 3 && day >= 1 && day <= 20)) {
+            System.out.println("Рыбы");
+        } else if ((month == 3 && day >= 21 && day <= 31) || (month == 4 && day >= 1 && day <= 20)) {
+            System.out.println("Овен");
+        } else if ((month == 4 && day >= 21 && day <= 30) || (month == 5 && day >= 1 && day <= 21)) {
+            System.out.println("Телец");
+        } else if ((month == 5 && day >= 22 && day <= 31) || (month == 6 && day >= 1 && day <= 21)) {
+            System.out.println("Близнецы");
+        } else if ((month == 6 && day >= 22 && day <= 30) || (month == 7 && day >= 1 && day <= 22)) {
+            System.out.println("Рак");
+        } else if ((month == 7 && day >= 23 && day <= 31) || (month == 8 && day >= 1 && day <= 21)) {
+            System.out.println("Лев");
+        } else if ((month == 8 && day >= 22 && day <= 31) || (month == 9 && day >= 1 && day <= 23)) {
+            System.out.println("Дева");
+        } else if ((month == 9 && day >= 24 && day <= 30) || (month == 10 && day >= 1 && day <= 23)) {
+            System.out.println("Весы");
+        } else if ((month == 10 && day >= 24 && day <= 31) || (month == 11 && day >= 1 && day <= 23)) {
+            System.out.println("Скорпион");
+        } else if ((month == 11 && day >= 24 && day <= 30) || (month == 12 && day >= 1 && day <= 22)) {
+            System.out.println("Телец");
+        } else if ((month == 12 && day >= 23 && day <= 31) || (month == 1 && day >= 1 && day <= 20)) {
+            System.out.println("Козерог");
         }
     }
+
 
     /**
      * 5)
@@ -168,7 +154,7 @@ public class Task4 {
 
     public static int num(int number) {
         if (number > 0) {
-            number = ++number;
+            number++;
         } else {
             if (number == 0) {
                 number = 10;
@@ -193,7 +179,7 @@ public class Task4 {
             array[i] = random.nextInt(array.length);
         }
         for (int i : array) {
-            if (!(array[i] % 2 == 0)) {
+            if (array[i] % 2 != 0) {
                 result++;
             }
         }
@@ -217,34 +203,34 @@ public class Task4 {
         if (number % 3 == 0 && number % 5 == 0) {
             foo();
             bar();
-        } else {
-            if (number % 3 == 0) {
-                foo();
-            } else {
-                if (number % 5 == 0) {
-                    bar();
-                }
-            }
+        } else if (number % 3 == 0) {
+            foo();
+        } else if (number % 5 == 0) {
+            bar();
         }
     }
 
-    // * 9)
+}
+
+//В РАЗРАБОТКЕ
+// * 9)
 // * Задача со звездочкой!
 // * Метод должен печатать все простые числа <1000
 // * что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
 // * //
 // */
-    public static void operation() {
-        int[] array = new int[1001];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i;
-        }
-        System.out.print("2 5 7");
-        for (int i : array) {
-            if (array[i] != 1 && !(array[i] % 2 == 0) && !(array[i] % 3 == 0) && !(array[i] % 5 == 0) && !(array[i] % 7 == 0)) {
-                System.out.print(" " + array[i]);
-            }
-        }
-    }
-}
+//    public static void operation() {
+//        int[] array = new int[1001];
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = i;
+//        }
+//        System.out.print("2 5 7");
+//        for (int i : array) {
+//            if (array[i] != 1 && !(array[i] % 2 == 0) && !(array[i] % 3 == 0) && !(array[i] % 5 == 0) && !(array[i] % 7 == 0)) {
+//                System.out.print(" " + array[i]);
+//            }
+//        }
+//    }
+//}
+
 
