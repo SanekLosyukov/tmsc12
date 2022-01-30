@@ -1,10 +1,15 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Task5 {
 
     public static void main(String[] args) {
 //        System.out.println(summ(-5, -7));
-        nechetMassive();
+
+//        nechetMassive();
+//        maxElement();
+//        zamena();
+        zamenaMaxElementa();
 //            calculateSumOfDiagonalElements();
 //            printMatrix();
     }
@@ -70,15 +75,62 @@ public class Task5 {
         }
     }
 
-//        4) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
+    //        4) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
 
-//        5) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
+    public static void maxElement() {
+        int[] array = new int[15];
+        int max = 0;
+        int index = 0;
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(array.length);
+            if (array[i] >= max) {
+                max = array[i];
+                index = i;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(max + " " + index);
+    }
+
+    //        5) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
 //        Снова выведете массив на экран на отдельной строке.
+    public static void zamena() {
+        int[] array = new int[20];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(array.length);
+        }
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 != 0) {
+                array[i] = 0;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+    }
 
-//        6) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+    //        6) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
+    public static void zamenaMaxElementa() {
+        int[] array = new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2};
+        int max = 0;
+        int index = 0;
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= max) {
+                max = array[i];
+                index = i;
+            }
+        }
+        System.out.println(Arrays.toString(array));
+        int temp = array[0];
+        array[0] = max;
+        array[index] = temp;
+        System.out.println(Arrays.toString(array));
+    }
 
 //        7) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
 //        Пример: {0,3,46,3,2,1,2}
