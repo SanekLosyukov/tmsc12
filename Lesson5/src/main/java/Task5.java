@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class Task5 {
 
     public static void main(String[] args) {
-        System.out.println(summ(-5, -7));
-        treug();
-        nechetMassive();
-        maxElement();
-        zamena();
-        zamenaMaxElementa();
-        proverkaElementov();
-        printMatrix();
+//        System.out.println(summ(-5, -7));
+//        treug();
+//        nechetMassive();
+//        maxElement();
+//        zamena();
+//        zamenaMaxElementa();
+//        proverkaElementov();
+//        printMatrix();
         calculateSumOfDiagonalElements();
     }
 
@@ -252,12 +252,10 @@ public class Task5 {
                 neWarray[i][j] = String.valueOf(array[i][j]);
                 if (array[i][j] % 3 == 0) {
                     neWarray[i][j] = "+";
+                } else if (array[i][j] % 7 == 0) {
+                    neWarray[i][j] = "-";
                 } else {
-                    if (array[i][j] % 7 == 0) {
-                        neWarray[i][j] = "-";
-                    } else {
-                        neWarray[i][j] = "*";
-                    }
+                    neWarray[i][j] = "*";
                 }
                 System.out.print(neWarray[i][j] + " ");
             }
@@ -265,5 +263,6 @@ public class Task5 {
         }
     }
 }
+
 
 
