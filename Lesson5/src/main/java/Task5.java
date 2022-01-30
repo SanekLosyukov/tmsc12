@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class Task5 {
 
     public static void main(String[] args) {
-//        System.out.println(summ(-5, -7));
-
-//        nechetMassive();
-//        maxElement();
-//        zamena();
-//        zamenaMaxElementa();
-//        proverkaElementov();
-//        printMatrix();
+        System.out.println(summ(-5, -7));
+        treug();
+        nechetMassive();
+        maxElement();
+        zamena();
+        zamenaMaxElementa();
+        proverkaElementov();
+        printMatrix();
         calculateSumOfDiagonalElements();
-//
+
     }
 
     //        1) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
@@ -33,8 +33,7 @@ public class Task5 {
         }
     }
 
-//        2) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
-
+    //        2) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
 //        a)                  b)
 //              *        *
 //            * *        * *
@@ -46,7 +45,27 @@ public class Task5 {
 //          * * *        * * *
 //            * *        * *
 //              *        *
-
+    public static void treug() {
+        String Array[][] = {
+                {"       *        *       "},
+                {"     * *        * *     "},
+                {"   * * *        * * *   "},
+                {" * * * *        * * * * "},
+                {"                        "},
+                {"                        "},
+                {"                        "},
+                {" * * * *        * * * * "},
+                {"   * * *        * * *   "},
+                {"     * *        * *     "},
+                {"       *        *       "},
+        };
+        for (int i = 0; i < Array.length; i++) {
+            for (int j = 0; j < Array[i].length; j++) {
+                System.out.print(Array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 
     //        3) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
@@ -57,7 +76,6 @@ public class Task5 {
             if (i % 2 != 0)
                 a++;
         }
-        System.out.println(Arrays.toString(arr));
         int[] array = new int[a];
         for (int i = 1, j = 0; i <= arr.length; i++) {
             if (i % 2 != 0) {
@@ -143,7 +161,7 @@ public class Task5 {
         int[] array = new int[]{0, 0, 46, 46, 20, 1, 28};
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
-                while (array[i] == array[j]) {
+                if (array[i] == array[j]) {
                     System.out.println("Массив имеет повторяющиеся элементы" + array[i]);
                 }
             }
@@ -187,8 +205,6 @@ public class Task5 {
             System.out.println("");
         }
     }
-
-
 
     /*10)
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
