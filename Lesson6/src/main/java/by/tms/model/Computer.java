@@ -8,7 +8,7 @@ public class Computer {
     private String ram;
     private String hdd;
     private int cycleResource;
-    private boolean burn = false;     //булевская переменная; true - сгорел или false - не сгорел;
+    private boolean burn;     //действительно burn по дефольту же false
 
     public Computer(String cpu, String ram, String hdd, int cycleResource) {
         this.cpu = cpu;
@@ -18,25 +18,24 @@ public class Computer {
     }
 
     public void on() {    // метод включение
-        System.out.println("Внимание! Введите 0 или 1");
-        Scanner scanner = new Scanner(System.in);
-        int personValue = scanner.nextInt();
-        Random random = new Random();
-        int randomValue = random.nextInt(2);
-        if (personValue == randomValue) {
-            off();
-        } else {
-            burn();
-            burn = true;
-        }
-    }
-
-    public void secondOn() {  // метод повторное включение
-        if (burn = true) {
-            burn();
-        } else {
-            on();
-        }
+        do {
+            if (cycleResource > 0) {  // проверка на то, что комп не сгорел
+                System.out.println("Внимание! Введите 0 или 1");
+                Scanner scanner = new Scanner(System.in);
+                int personValue = scanner.nextInt();
+                Random random = new Random();
+                int randomValue = random.nextInt(2);
+                if (personValue == randomValue) {
+                    off();
+                } else {
+                    burn();
+                }
+                System.out.println("Осталось циклов " + cycleResource--);
+                ;
+            } else {
+                burn();
+            }
+        } while (cycleResource > 0);
     }
 
     public void off() {  // метод выключение
@@ -47,6 +46,7 @@ public class Computer {
     public void burn() {  // метод когда компьютер сгорел
         System.out.println("Компьютер сгорел");
         cycleResource = 0;
+        burn = true;
     }
 
     @Override
