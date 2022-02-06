@@ -1,3 +1,5 @@
+package task1;
+
 public class Address {
 
     private String country;
@@ -33,7 +35,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
+        return "task1.Address{" +
                 "country='" + country + '\'' +
                 ", city='" + city + '\'' +
                 '}';

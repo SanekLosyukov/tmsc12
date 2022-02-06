@@ -1,3 +1,5 @@
+package task1;
+
 import java.util.Arrays;
 
 public class Main {
@@ -14,8 +16,11 @@ public class Main {
         Person person6 = new Person("Evgeniy", 16, Person.getSEX(), addressMinsk);
 
         Person[] citizens = {person1, person2, person3, person4, person5, person6};
-//        System.out.println(Arrays.toString(citizens));
         PersonRegistry registry = new PersonRegistry(citizens);
-        System.out.println(Arrays.toString(registry.findByAddress("Minsk")));
+
+        System.out.println(Arrays.toString((registry.findByAge()))); // а) все призывники
+        System.out.println(Arrays.toString(registry.findByMinsk("Minsk"))); // б) призывники Минска
+        System.out.println(Arrays.toString(registry.findByAge25to27())); // в) призывники от 25 до 27 лет
+        System.out.println(Arrays.toString(registry.findByAlexandr("Alexandr"))); // г) призывники Александры
     }
 }

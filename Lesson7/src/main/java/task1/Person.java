@@ -1,3 +1,5 @@
+package task1;
+
 public class Person {
     private String name;
     private int age;
@@ -19,9 +21,17 @@ public class Person {
         return address;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "Person{" +
+        return "task1.Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", address=" + address +
