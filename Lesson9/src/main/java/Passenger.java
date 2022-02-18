@@ -9,6 +9,10 @@ public class Passenger extends Ground {
     private int time;
     private final int FUELCONSUMPTION = 10;  // расход топлива константа 10 л/ 100 км
 
+    public Passenger(String model) {
+        super(model);
+    }
+
     public void description() {   //метод описание
         getBodyType();
         getNumberOfPassengers();
@@ -26,5 +30,4 @@ public class Passenger extends Ground {
     public int fuelUsed() {   // метод израсходованное топливо
         return this.time * super.maxSpeed * FUELCONSUMPTION / 100;
     }
-
 }
