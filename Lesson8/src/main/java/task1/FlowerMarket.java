@@ -11,7 +11,6 @@ import static task1.Constants.flowerNamePriceArray;
 @Getter
 public class FlowerMarket {
     private final List<Bouquet> soldBouquets = new ArrayList<>();
-
     //  магазин получает (собирает) букет из цветов
     public Bouquet getBouquet(String... flowers) {
         Flower[] result = new Flower[flowers.length];
