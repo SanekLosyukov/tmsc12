@@ -5,6 +5,5 @@ public class AdidasJacket extends Jacket {
 
     public AdidasJacket(int price) {
         super(price, NAME);
-
     }
 }
