@@ -11,41 +11,25 @@ public class Main {
 
     public static void main(String[] args) {
         TextFormatter textFormatter = new TextFormatter();
-        FileInputStream inputStream = null;
-        FileOutputStream outputStream = null;
-        try {
-            inputStream = new FileInputStream(INPUT_FILE);
+        try (FileInputStream inputStream = new FileInputStream(INPUT_FILE);
+             FileOutputStream outputStream = new FileOutputStream(OUTPUT_FILE, false)) {
             StringBuilder stringBuilder = new StringBuilder();
             int value;
             while ((value = inputStream.read()) != -1) {
                 stringBuilder.append((char) value);
             }
             String string = stringBuilder.toString();
-            outputStream = new FileOutputStream(OUTPUT_FILE, true);
             outputStream.write(textFormatter
-                    .numberOfWordsInString(string)
+                    .wordsInString(string)
                     .getBytes(StandardCharsets.UTF_8));
-
-            boolean b = textFormatter.searchPalindrome(string);
-            if (b) {
+            boolean search = textFormatter.searchPalindrome(string);
+            if (search) {
                 outputStream.write(" true ".getBytes(StandardCharsets.UTF_8));
             } else {
                 outputStream.write(" false ".getBytes(StandardCharsets.UTF_8));
             }
-
         } catch (IOException exception) {
-            System.out.println("Ошибка" + exception);
-        } finally {
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-                if (outputStream != null) {
-                    outputStream.close();
-                }
-            } catch (IOException exception) {
-                System.out.println("Ошибка" + exception);
-            }
+            System.out.println("Unexpected error" + exception);
         }
     }
 }

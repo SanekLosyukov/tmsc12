@@ -44,7 +44,7 @@ public class HomeWork {
      *
      * */
 
-    /**
+    /*
      * 1)В исходном файле hw1/input.txt находятся слова, каждое слово на новой строке.
      * После запуска программы должен создать файл output.txt, который будет содержать в себе
      * только палиндромы.
@@ -83,7 +83,8 @@ public class HomeWork {
      * https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.12.3
      * https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/2.12.3
      * через maven в проект. Далее вычитать данные в json формате из файла (hw5/car.json), руками файл изменять нельзя!
-     * Преобразовать прочитанные данные в объект hw5.Car (название полей редактировать нельзя, добавлять поля также нельзя) и вывести на консоль объект через System.out.println();
+     * Преобразовать прочитанные данные в объект hw5.Car (название полей редактировать нельзя, добавлять поля также
+     * нельзя) и вывести на консоль объект через System.out.println();
      *
      */
 
