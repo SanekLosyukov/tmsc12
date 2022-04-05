@@ -1,11 +1,11 @@
-package by.teachmeskills.jdbc.utils;
+package by.teachmeskills.task1.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DbUtils {
-    private static String dbUrl = "jdbc:mysql://localhost^3306/STUDENTS_DB";
+public class DbUtils1 {
+    private static String dbUrl = "jdbc:mysql://localhost:3306/SHOP_DB";
     private static String dbUsername = "root";
     private static String dbPassword = "1234";
 
@@ -19,3 +19,4 @@ public class DbUtils {
         return connection;
     }
 }
+
