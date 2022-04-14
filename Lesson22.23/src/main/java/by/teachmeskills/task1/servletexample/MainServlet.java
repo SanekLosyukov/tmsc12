@@ -27,13 +27,17 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        String varTextA = "Hello World";
+        Calculator calculator = new Calculator();
+        String varTextA = "Сумма 15 + 16 = " + calculator.sum(15, 16);
         req.setAttribute("textA", varTextA);
-        String varTextB = "My First JSP page";
+        String varTextB = "Вычитание 58 - 34 = " + calculator.subtraction(58, 34);
         req.setAttribute("textB", varTextB);
+        String varTextC = "Умножение 54 * 54 = " + calculator.multiply(54, 54);
+        req.setAttribute("textC", varTextC);
+        String varTextD = "Деление 20 / 5 = " + calculator.divide(20, 5);
+        req.setAttribute("textD", varTextD);
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/index.jsp");
         requestDispatcher.forward(req, resp);
     }
-
 }

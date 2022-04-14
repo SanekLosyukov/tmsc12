@@ -2,10 +2,12 @@
 
 <html>
 <head>
-    <title>My first JSP</title>
+    <title>My JSP Calculator</title>
 </head>
 <body>
 ${textA}
 ${textB}
+${textC}
+${textD}
 </body>
 </html>

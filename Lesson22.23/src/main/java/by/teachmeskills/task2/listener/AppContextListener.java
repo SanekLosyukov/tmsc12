@@ -1,4 +1,4 @@
-package by.teachmeskills.listener;
+package by.teachmeskills.task2.listener;
 
 public class AppContextListener { //implements ServletContextListener {
 //    @Override

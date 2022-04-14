@@ -1,4 +1,4 @@
-package by.teachmeskills.model;
+package by.teachmeskills.task2.listener.model;
 
 public class User {
 //    private String email;
