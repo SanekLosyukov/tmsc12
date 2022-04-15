@@ -28,6 +28,7 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         Calculator calculator = new Calculator();
+
         String varTextA = "Сумма 15 + 16 = " + calculator.sum(15, 16);
         req.setAttribute("textA", varTextA);
         String varTextB = "Вычитание 58 - 34 = " + calculator.subtraction(58, 34);
