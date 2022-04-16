@@ -5,9 +5,9 @@
     <title>My JSP Calculator</title>
 </head>
 <body>
-${textA}
-${textB}
-${textC}
-${textD}
+${sum}
+${subtraction}
+${multiply}
+${divide}
 </body>
 </html>

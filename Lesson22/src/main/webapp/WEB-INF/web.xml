@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>main-servlet</servlet-name>
-        <servlet-class>by.teachmeskills.task1.servletexample.MainServlet</servlet-class>
+        <servlet-class>by.teachmeskills.task1.servletcalculator.MainServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
