@@ -1,4 +1,4 @@
-package by.teachmeskills.task1.model;
+package by.teachmeskills.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

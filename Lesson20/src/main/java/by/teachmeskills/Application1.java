@@ -1,7 +1,7 @@
-package by.teachmeskills.task1;
+package by.teachmeskills;
 
-import by.teachmeskills.task1.model.Product;
-import by.teachmeskills.task1.utils.CRUDUtils1;
+import by.teachmeskills.model.Product;
+import by.teachmeskills.utils.CRUDUtils1;
 
 public class Application1 {
     public static void main(String[] args) {

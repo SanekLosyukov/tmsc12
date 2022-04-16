@@ -1,4 +1,4 @@
-package by.teachmeskills.task1;
+package by.teachmeskills;
 
 public class HomeWorkTask1 {
 //    Создать таблицу с данными о товарах интернет-магазина

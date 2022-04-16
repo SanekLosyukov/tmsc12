@@ -1,4 +1,4 @@
-package by.teachmeskills.task1.servletcalculator;
+package by.teachmeskills.servletcalculator;
 
 public class Calculator {
     public <T extends Number, K extends Number> double sum(T t, K k) {

@@ -1,4 +1,4 @@
-package by.teachmeskills.task1.utils;
+package by.teachmeskills.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

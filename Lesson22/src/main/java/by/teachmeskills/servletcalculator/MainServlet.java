@@ -1,4 +1,4 @@
-package by.teachmeskills.task1.servletcalculator;
+package by.teachmeskills.servletcalculator;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;

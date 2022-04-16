@@ -1,6 +1,6 @@
-package by.teachmeskills.task1.utils;
+package by.teachmeskills.utils;
 
-import by.teachmeskills.task1.model.Product;
+import by.teachmeskills.model.Product;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
