@@ -27,9 +27,9 @@ public class MainServletLogin extends HttpServlet {
         String password = req.getParameter("pass");
 
         if (!user.getEmail().equals(email) || !user.getPassword().equals(password)) {
-            resp.getWriter().write("Неверные данные пользователя!");
+            resp.sendRedirect("/login.html");
         } else {
-            resp.getWriter().write("User with email " + email + " " + "and password " + password + " is successfully logged in");
+            resp.getWriter().write("Пользователь с email " + email + " " + "и паролем " + password + " успешно залогинен");
         }
     }
 
