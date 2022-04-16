@@ -1,6 +1,6 @@
 package by.teachmeskills.servletlogin.servlet;
 
-import by.teachmeskills.model.User;
+import by.teachmeskills.servletlogin.model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
