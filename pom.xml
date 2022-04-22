@@ -29,29 +29,43 @@
         <module>Lesson12</module>
         <module>Lesson13</module>
         <module>Lesson14</module>
+<<<<<<< HEAD
         <module>Lesson15</module>
         <module>Lesson16</module>
         <module>Lesson17.18</module>
         <module>Lesson19</module>
+=======
+        <module>Lesson20</module>
+>>>>>>> Lesson20
     </modules>
 
     <dependencies>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
         </dependency>
+
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.11.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+
     </dependencies>
 
 </project>
