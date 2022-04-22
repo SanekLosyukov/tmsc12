@@ -30,6 +30,7 @@
         <module>Lesson13</module>
         <module>Lesson14</module>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <module>Lesson15</module>
         <module>Lesson16</module>
         <module>Lesson17.18</module>
@@ -37,6 +38,10 @@
 =======
         <module>Lesson20</module>
 >>>>>>> Lesson20
+=======
+        <module>Lesson20</module>
+        <module>Lesson22</module>
+>>>>>>> Lesson22
     </modules>
 
     <dependencies>
@@ -66,6 +71,24 @@
             <version>8.0.28</version>
         </dependency>
 
+<<<<<<< HEAD
+=======
+        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+
+>>>>>>> Lesson22
     </dependencies>
 
 </project>
