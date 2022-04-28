@@ -31,6 +31,7 @@
         <module>Lesson14</module>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <module>Lesson15</module>
         <module>Lesson16</module>
         <module>Lesson17.18</module>
@@ -42,6 +43,11 @@
         <module>Lesson20</module>
         <module>Lesson22</module>
 >>>>>>> Lesson22
+=======
+        <module>Lesson20</module>
+        <module>Lesson22</module>
+        <module>Lesson24</module>
+>>>>>>> Lesson24
     </modules>
 
     <dependencies>
@@ -72,7 +78,10 @@
         </dependency>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Lesson24
         <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -88,7 +97,10 @@
         </dependency>
 
 
+<<<<<<< HEAD
 >>>>>>> Lesson22
+=======
+>>>>>>> Lesson24
     </dependencies>
 
 </project>
