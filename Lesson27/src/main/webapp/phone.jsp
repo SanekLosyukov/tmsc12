@@ -17,7 +17,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <div class="container mt-3">
-    <h2>Мобильные телефоны</h2>
+    <h2>Добро пожаловать в магазин товаров</h2>
     <button type="button" class="btn btn-primary active">Гавная</button>
     <button type="button" class="btn btn-primary">Войти</button>
     <button type="button" class="btn btn-primary">Корзина</button>
@@ -25,20 +25,23 @@
 
 
 <div class="container mt-3">
-
-    <c:if test="${not empty productList}">
+    <h2>Мобильные телефоны </h2>
+    <p>Выберите категорию</p>
+    <c:if test="${not empty phones}">
         <table class="table">
             <tbody>
             <tr>
-                <c:forEach items="${productList}" var="product">
-                    <div class="card w-25 m-1" type="product">
+                <c:forEach items="${phones}" var="phone">
+                    <div class="card w-25 m-1" type="phone">
                         <div class="card-body">
-
+                            <a>${phone.getName()}</a>
+                                <%--                            <a href="${contextPath}/phone?id=${phone.getId()}">${phone.getName()}</a> эта строка необходима
+                                                                если требуется ссылка на другой сервлет по нажатию на конкретную модель--%>
+                                <%--                        contexPath - обращение к папке webapp--%>
+                                <%--                        /phone - обращение к нашему сервлету категории--%>
                             <img class="card-img" style="width:150px;height:120px"
-                                 src="${contextPath}/images/${product.getImageName()}" alt="Card image"> <br>
-                            <a href="${contextPath}/phone?id=${product.getId()}">${product.getName()}</a>
-                                <%--                            <a>${product.getName()}</a><br>--%>
-                            <a>Описание: ${product.getDescription()}</a><br>
+                                 src="${contextPath}/images/${phone.getImageName()}" alt="Card image">
+                            <a>Описание: ${phone.getDescription()}</a><br>
                         </div>
                     </div>
                 </c:forEach>

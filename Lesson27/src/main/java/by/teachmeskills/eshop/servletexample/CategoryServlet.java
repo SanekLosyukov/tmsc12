@@ -32,20 +32,21 @@ public class CategoryServlet extends HttpServlet {
 
         switch (id) {
             case 1 -> {
-                Product samsung = new Product(1, "Samsung", "Full HD Display, Battery 4000 mAh", 2500, "samsung.jpg");
-                Product iphone = new Product(2, "iPhone", "Retina Display, Bluetooth", 3000, "iphone.jpg");
-                products.add(samsung);
+                Product iphone = new Product(1, "iPhone", "World famous phones from Apple", "iphone.jpg");
+                Product samsung = new Product(2, "Samsung", "Korean phone manufacturer", "samsung.jpg");
                 products.add(iphone);
+                products.add(samsung);
+
             }
             case 2 -> {
-                Product huawei = new Product(1, "Huawei", "15 inch display, new model", 5000, "huawei.jpg");
-                Product xiaomi = new Product(2, "Xiaomi", "17 inch display, Battery 6000 mAh", 600, "xiaomi.jpg");
+                Product huawei = new Product(3, "Huawei", "15 inch display, new model", "huawei.jpg");
+                Product xiaomi = new Product(4, "Xiaomi", "17 inch display, Battery 6000 mAh", "xiaomi.jpg");
                 products.add(huawei);
                 products.add(xiaomi);
             }
             case 3 -> {
-                Product bosch = new Product(1, "Bosch", "5 years warranty", 1800, "bosch.jpg");
-                Product atlant = new Product(2, "Atlant", "Made in Belarus", 1000, "atlant.jpg");
+                Product bosch = new Product(5, "Bosch", "5 years warranty", "bosch.jpg");
+                Product atlant = new Product(6, "Atlant", "Made in Belarus", "atlant.jpg");
                 products.add(bosch);
                 products.add(atlant);
             }
