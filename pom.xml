@@ -30,16 +30,20 @@
         <module>Lesson13</module>
         <module>Lesson14</module>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 8d920924748e7fe5691faebb96c58635657b1d45
+=======
+>>>>>>> Lesson29
         <module>Lesson15</module>
         <module>Lesson16</module>
         <module>Lesson17.18</module>
         <module>Lesson19</module>
         <module>Lesson20</module>
+<<<<<<< HEAD
         <module>Lesson20</module>
         <module>Lesson22</module>
 <<<<<<< HEAD
@@ -52,6 +56,12 @@
         <module>Lesson24</module>
 >>>>>>> Lesson24
 >>>>>>> 8d920924748e7fe5691faebb96c58635657b1d45
+=======
+        <module>Lesson20</module>
+        <module>Lesson22</module>
+        <module>Lesson29</module>
+
+>>>>>>> Lesson29
     </modules>
 
     <dependencies>
@@ -82,12 +92,15 @@
         </dependency>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> Lesson24
+=======
+>>>>>>> Lesson29
         <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 >>>>>>> 8d920924748e7fe5691faebb96c58635657b1d45
         <dependency>
@@ -105,12 +118,15 @@
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 >>>>>>> Lesson22
 =======
 >>>>>>> Lesson24
 >>>>>>> 8d920924748e7fe5691faebb96c58635657b1d45
+=======
+>>>>>>> Lesson29
     </dependencies>
 
 </project>
