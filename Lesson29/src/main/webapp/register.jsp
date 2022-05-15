@@ -42,11 +42,7 @@
                            required>
                     <div class="invalid-feedback">Date should be entered!</div>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Save credentials</button>
-                <a href="${contextPath}/signin.jsp" button type="submit" class="btn btn-primary">Go to the login
-                    page</a>
-
         </form>
     </div>
 </div>
