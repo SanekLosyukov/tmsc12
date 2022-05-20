@@ -29,7 +29,7 @@
                     <a class="nav-link" href="javascript:void(0)">Кабинет</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${contextPath}/cart.jsp">Корзина</a>
+                    <a class="nav-link" href="${contextPath}/cart">Корзина</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -43,29 +43,33 @@
 
 <div class="container mt-3">
     <h2>Корзина </h2>
+
     <c:if test="${not empty phonesInCart}">
 
-    <div class="row">
-        <c:forEach items="${phonesInCart}" var="phonesInCart">
+        <div class="row">
+            <c:forEach items="${phonesInCart}" var="phone">
 
-            <div class="col-sm-2 p-3 ">
-                <img class="card-img" style="width:130px;height:160px"
-                     src="${contextPath}/images/${phonesInCart.getImageName()}" alt="Card image">
-            </div>
-            <div class="col-sm-6 p-3">
-                <a><h4>${phonesInCart.getName()}</h4></a><br>
+                <div class="col-sm-2 p-3 ">
+                    <img class="card-img" style="width:130px;height:160px"
+                         src="${contextPath}/images/${phone.getImageName()}" alt="Card image">
+                </div>
+                <div class="col-sm-6 p-3">
+                    <a><h4>${phone.getName()}</h4></a><br>
 
-            </div>
+                </div>
 
-            <div class="col-sm-3 p-3">
-                <button type="submit" class="btn btn-success">Оформить</button>
-            </div>
+                <div class="col-sm-3 p-3">
+                    <button type="submit" class="btn btn-success">Оформить</button>
+                    <br>
+                    <a href="${contextPath}/remove?id=${phone.getId()}" button type="submit" class="btn btn-success">Удалить</a>
+                        <%--                    редирект на сервлет удаления товара из корзины--%>
+                </div>
 
-        </c:forEach>
-    </div>
+            </c:forEach>
+        </div>
 
     </c:if>
 
-
+</div>
 </body>
 </html>

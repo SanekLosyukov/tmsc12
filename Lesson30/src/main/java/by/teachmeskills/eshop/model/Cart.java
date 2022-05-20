@@ -14,18 +14,18 @@ public class Cart {
         this.phones = new HashMap<>();
     }
 
-    public void addProduct(Phone phone) {
+    public void addPhone(Phone phone) {
         phones.put(phone.getId(), phone);
         totalPrice += phone.getPrice();
     }
 
-    public void removeProduct(int productId) {
-        Phone phone = phones.get(productId);
-        phones.remove(productId);
+    public void removePhone(int id) {
+        Phone phone = phones.get(id);
+        phones.remove(id);
         totalPrice -= phone.getPrice();
     }
 
-    public List<Phone> getProducts() {
+    public List<Phone> getPhones() {
         return new ArrayList<>(phones.values());
     }
 
