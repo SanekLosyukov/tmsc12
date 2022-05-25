@@ -53,7 +53,7 @@
                          src="${contextPath}/images/${product.getImageName()}" alt="Card image"> <br>
                 </div>
                 <div class="col-sm-6 p-3">
-                    <a href="${contextPath}/phone?id=${product.getId()}"><h4>${product.getName()}</h4></a><br>
+                    <a href="${contextPath}/product?id=${product.getId()}"><h4>${product.getName()}</h4></a><br>
                     <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
                 </div>
                 <div class="col-sm-3 p-3">

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -14,12 +15,12 @@ import java.io.IOException;
 public class RemoveProductFromCartServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter("id"));
         Cart cart = new Cart();
-        cart.removePhone(id);
+        cart.removeProduct(id);
 
-        req.setAttribute("phonesInCart", cart.getPhones());
+        session.setAttribute("cart", cart);
         req.getServletContext().getRequestDispatcher("/cart.jsp").forward(req, resp);
     }
 

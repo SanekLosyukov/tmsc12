@@ -7,26 +7,26 @@ import java.util.Map;
 
 public class Cart {
 
-    private Map<Integer, Phone> phones;
+    private Map<Integer, Product> products;
     private int totalPrice = 0;
 
     public Cart() {
-        this.phones = new HashMap<>();
+        this.products = new HashMap<>();
     }
 
-    public void addPhone(Phone phone) {
-        phones.put(phone.getId(), phone);
-        totalPrice += phone.getPrice();
+    public void addProduct(Product product) {
+        products.put(product.getId(), product);
+        totalPrice += product.getPrice();
     }
 
-    public void removePhone(int id) {
-        Phone phone = phones.get(id);
-        phones.remove(id);
-        totalPrice -= phone.getPrice();
+    public void removeProduct(int id) {
+        Product product = products.get(id);
+        products.remove(id);
+        totalPrice -= product.getPrice();
     }
 
-    public List<Phone> getPhones() {
-        return new ArrayList<>(phones.values());
+    public List<Product> getProducts() {
+        return new ArrayList<>(products.values());
     }
 
     public int getTotalPrice() {
@@ -34,7 +34,7 @@ public class Cart {
     }
 
     public void clear() {
-        phones.clear();
+        products.clear();
     }
 
 }

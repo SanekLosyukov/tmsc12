@@ -44,24 +44,24 @@
 <div class="container mt-3">
     <h2>Корзина </h2>
 
-    <c:if test="${not empty phonesInCart}">
+    <c:if test="${not empty cartProducts}">
 
         <div class="row">
-            <c:forEach items="${phonesInCart}" var="phone">
+            <c:forEach items="${cartProducts}" var="product">
 
                 <div class="col-sm-2 p-3 ">
                     <img class="card-img" style="width:130px;height:160px"
-                         src="${contextPath}/images/${phone.getImageName()}" alt="Card image">
+                         src="${contextPath}/images/${product.getImageName()}" alt="Card image">
                 </div>
                 <div class="col-sm-6 p-3">
-                    <a><h4>${phone.getName()}</h4></a><br>
+                    <a><h4>${product.getName()}</h4></a><br>
 
                 </div>
 
                 <div class="col-sm-3 p-3">
                     <button type="submit" class="btn btn-success">Оформить</button>
                     <br>
-                    <a href="${contextPath}/remove?id=${phone.getId()}" button type="submit" class="btn btn-success">Удалить</a>
+                    <a href="${contextPath}/remove?id=${product.getId()}" button type="submit" class="btn btn-success">Удалить</a>
                         <%--                    редирект на сервлет удаления товара из корзины--%>
                 </div>
 

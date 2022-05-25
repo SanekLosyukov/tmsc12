@@ -44,24 +44,23 @@
 <div class="container mt-3">
     <h2>Мобильные телефоны </h2>
     <p>Выберите категорию</p>
-    <c:if test="${not empty phones}">
+    <c:if test="${not empty products}">
 
         <div class="row">
-            <c:forEach items="${phones}" var="phone">
+            <c:forEach items="${products}" var="product">
 
                 <div class="col-sm-2 p-3 ">
                     <img class="card-img" style="width:130px;height:160px"
-                         src="${contextPath}/images/${phone.getImageName()}" alt="Card image">
+                         src="${contextPath}/images/${product.getImageName()}" alt="Card image">
                 </div>
                 <div class="col-sm-6 p-3">
-                    <a><h4>${phone.getName()}</h4></a><br>
-                    <a><h5>Описание:</h5> <h6> ${phone.getDescription()}</h6></a><br>
-                    <a><h5>Цена: ${phone.getPrice()} руб.</h5></a><br>
+                    <a><h4>${product.getName()}</h4></a><br>
+                    <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
+                    <a><h5>Цена: ${product.getPrice()} руб.</h5></a><br>
                 </div>
 
                 <div class="col-sm-3 p-3">
-                    <a href="${contextPath}/cart?id=${phone.getId()}" button type="submit" class="btn btn-success">Купить</a>
-                    </button>
+                    <a href="${contextPath}/add?id=${product.getId()}" button type="submit" class="btn btn-success">Купить</a>
                 </div>
 
             </c:forEach>
