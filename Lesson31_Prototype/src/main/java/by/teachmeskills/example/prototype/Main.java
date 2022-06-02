@@ -22,25 +22,25 @@ public class Main {
         bike.passenger = 2;
         bike.frameLength = 2200; // мм, 2,2метра
         bike.color = "red";
-        shapes.add(rectangle);
-        cloneAndCompare(shapes, shapesCopy);
+        vehicles.add(bike);
+        cloneAndCompare(vehicles, vehiclesCopy);
     }
 
-    private static void cloneAndCompare(List<Shape> shapes, List<Shape> shapesCopy) {
-        for (Shape shape : shapes) {
-            shapesCopy.add(shape.clone());
+    private static void cloneAndCompare(List<Vehicle> vehicles, List<Vehicle> vehiclesCopy) {
+        for (Vehicle vehicle : vehicles) {
+            vehiclesCopy.add(vehicle.clone());
         }
 
-        for (int i = 0; i < shapes.size(); i++) {
-            if (shapes.get(i) != shapesCopy.get(i)) {
-                System.out.println(i + ": Shapes are different objects (yay!)");
-                if (shapes.get(i).equals(shapesCopy.get(i))) {
-                    System.out.println(i + ": And they are identical (yay!)");
+        for (int i = 0; i < vehicles.size(); i++) {
+            if (vehicles.get(i) != vehiclesCopy.get(i)) {
+                System.out.println(i + ": Разные объекты");
+                if (vehicles.get(i).equals(vehiclesCopy.get(i))) {
+                    System.out.println(i + ": Эти объекты идентичны");
                 } else {
-                    System.out.println(i + ": But they are not identical (booo!)");
+                    System.out.println(i + ": А эти не идентичны");
                 }
             } else {
-                System.out.println(i + ": Shape objects are the same (booo!)");
+                System.out.println(i + ": Транспортные средства разные");
             }
         }
     }

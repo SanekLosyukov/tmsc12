@@ -10,10 +10,10 @@ public abstract class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(int x, int y, String color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
+    public Vehicle(Vehicle target) {
+        this.x = target.x;
+        this.y = target.y;
+        this.color = target.color;
     }
 
     public abstract Vehicle clone();
