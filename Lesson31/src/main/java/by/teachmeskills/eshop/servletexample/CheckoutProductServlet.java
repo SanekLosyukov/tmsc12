@@ -31,13 +31,13 @@ public class CheckoutProductServlet extends HttpServlet {
 
         checkout.addProduct(product);
 
-        session.setAttribute("checkout", checkout);
-//
+        session.setAttribute("product", product);
+        req.getServletContext().getRequestDispatcher("/cabinet.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getServletContext().getRequestDispatcher("/cart.jsp").forward(req, resp);
+
     }
 
 

@@ -19,9 +19,9 @@ public class CartServlet extends HttpServlet {
         Cart cart = (Cart) session.getAttribute("cart");
 
         if (cart == null) {
-            req.setAttribute("cartProducts", "");
+            session.setAttribute("cartProducts", "");
         } else {
-            req.setAttribute("cartProducts", cart.getProducts());
+            session.setAttribute("cartProducts", cart.getProducts());
         }
 
         req.getServletContext().getRequestDispatcher("/cart.jsp").forward(req, resp);

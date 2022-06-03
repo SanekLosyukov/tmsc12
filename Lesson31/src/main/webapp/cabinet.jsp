@@ -71,10 +71,9 @@
     </c:if>
 </div>
 
-<c:if test="${not empty checkout}">
+<c:if test="${not empty checkoutProducts}">
     <div class="container mt-3">
 
-            <%--        <c:forEach items="${checkout}" var="product">--%>
         <p>Купленные Вами товары:</p>
         <table class="table">
             <thead>
@@ -86,16 +85,18 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><img class="card-img" style="width:65px;height:80px"
-                         src="${contextPath}/images/${product.getImageName()}" alt="Card image"></td>
-                <td>${product.getName()}</td>
-                <td>${product.getDescription()}</td>
-                <td>${product.getPrice()}</td>
-            </tr>
+            <c:forEach items="${checkoutProducts}" var="product">
+                <tr>
+                    <td><img class="card-img" style="width:65px;height:80px"
+                             src="${contextPath}/images/${product.getImageName()}" alt="Card image"></td>
+                    <td>${product.getName()}</td>
+                    <td>${product.getDescription()}</td>
+                    <td>${product.getPrice()}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
-            <%--        </c:forEach>--%>
+
     </div>
 </c:if>
 

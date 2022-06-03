@@ -20,7 +20,6 @@ public class CRUDUtils {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_USERS_QUERY);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-//                int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
                 String email = rs.getString("email");
