@@ -14,7 +14,7 @@
     </context-param>
     <context-param>
         <param-name>DBURL</param-name>
-        <param-value>jdbc:mysql://localhost:3306/STUDENTS_DB</param-value>
+        <param-value>jdbc:mysql://localhost:3306/USERS_DB</param-value>
     </context-param>
 
 </web-app>

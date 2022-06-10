@@ -12,7 +12,7 @@ public class DbUtils {
     public static Connection getConnection() {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver"); //подкл.драйвера
+            Class.forName("com.mysql.cj.jdbc.Driver"); //подкл.драйвера
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

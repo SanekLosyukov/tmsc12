@@ -64,12 +64,14 @@
                        type="submit"
                        class="btn btn-success">Оформить</a>
                     <br>
-                    <a href="${contextPath}/remove?id=${product.getId()}" button type="submit" class="btn btn-success">Удалить</a>
-                        <%--                    редирект на сервлет удаления товара из корзины--%>
+                    <a href="${contextPath}/eshop?command=remove-product-from-cart&product_id=${product.getId()}" button
+                       type="submit" class="btn btn-success">Удалить</a>
                 </div>
 
             </c:forEach>
         </div>
+
+        Общая сумма добавленных в корзину товаров:  ${totalPrice} руб.
 
     </c:if>
 

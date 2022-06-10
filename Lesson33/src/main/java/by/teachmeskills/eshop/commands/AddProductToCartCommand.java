@@ -3,12 +3,12 @@ package by.teachmeskills.eshop.commands;
 import by.teachmeskills.eshop.domain.Cart;
 import by.teachmeskills.eshop.domain.Product;
 import by.teachmeskills.eshop.exceptions.CommandException;
-import by.teachmeskills.eshop.utils.PagesPathEnum;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import static by.teachmeskills.eshop.utils.RequestParamsEnum.PRODUCT_ID;
+import static by.teachmeskills.eshop.utils.PagesPathEnum.CART_PAGE;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.*;
 
 public class AddProductToCartCommand implements BaseCommand {
 
@@ -19,23 +19,25 @@ public class AddProductToCartCommand implements BaseCommand {
         Product product = getProductById(id);
 
         Cart cart;
-        Object objCart = session.getAttribute("cart");
+        Object objCart = session.getAttribute(CART.getValue());
 
         if (objCart != null) {
             cart = (Cart) objCart;
         } else {
             cart = new Cart();
-            session.setAttribute("cart", cart);
+            session.setAttribute(CART.getValue(), cart);
         }
 
         cart.addProduct(product);
 
-        session.setAttribute("product", product);
-        return PagesPathEnum.CART_PAGE.getPath();
+        session.setAttribute(PRODUCT.getValue(), product);
+        session.setAttribute(CART_PRODUCTS.getValue(), cart.getProducts());
+        session.setAttribute(TOTALPRICE.getValue(), cart.getTotalPrice());
+        return CART_PAGE.getPath();
+
     }
 
     protected Product getProductById(int id) {
-
         switch (id) {
             case 1 -> {
                 return new Product(1, "iPhone11", "Apple iOS, экран 6.1 inch IPS (828x1792), Apple A13 Bionic, ОЗУ 4 ГБ, флэш-память 64 ГБ, камера 12 Мп, аккумулятор 3046 мАч, 1 SIM", 2500, "iphone11.jpg");
@@ -55,7 +57,6 @@ public class AddProductToCartCommand implements BaseCommand {
             case 6 -> {
                 return new Product(6, "Samsung S21", "Android, экран 6.2 inch AMOLED (1080x2400), Exynos 2100, ОЗУ 8 ГБ, флэш-память 256 ГБ, камера 64 Мп, аккумулятор 4000 мАч, 2 SIM", 3700, "samsungs21.jpg");
             }
-
             default -> System.out.println("Incorrect Id");
         }
         return null;

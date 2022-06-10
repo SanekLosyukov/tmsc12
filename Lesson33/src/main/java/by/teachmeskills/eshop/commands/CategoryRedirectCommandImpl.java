@@ -2,33 +2,35 @@ package by.teachmeskills.eshop.commands;
 
 import by.teachmeskills.eshop.domain.Product;
 import by.teachmeskills.eshop.exceptions.CommandException;
-import by.teachmeskills.eshop.utils.PagesPathEnum;
-import by.teachmeskills.eshop.utils.RequestParamsEnum;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+
+import static by.teachmeskills.eshop.utils.PagesPathEnum.CATEGORY_PAGE;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.ID;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.PRODUCTLIST;
 
 public class CategoryRedirectCommandImpl implements BaseCommand {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        int id = Integer.parseInt(request.getParameter("id"));
+        HttpSession session = request.getSession();
+        int id = Integer.parseInt(request.getParameter(ID.getValue()));
         List<Product> products = getProductsByCategoryId(id);
-        request.setAttribute(RequestParamsEnum.PRODUCTLIST.getValue(), products);
-        return PagesPathEnum.CATEGORY_PAGE.getPath();
+        session.setAttribute(PRODUCTLIST.getValue(), products);
+        return CATEGORY_PAGE.getPath();
     }
 
     private List<Product> getProductsByCategoryId(int id) {
         List<Product> products = new ArrayList<>();
-
         switch (id) {
             case 1 -> {
                 Product iphone = new Product(1, "iPhone", "World famous phones from Apple", "iphone.jpg");
                 Product samsung = new Product(2, "Samsung", "Korean phone manufacturer", "samsung.jpg");
                 products.add(iphone);
                 products.add(samsung);
-
             }
             case 2 -> {
                 Product huawei = new Product(3, "Huawei", "15 inch display, new model", "huawei.jpg");

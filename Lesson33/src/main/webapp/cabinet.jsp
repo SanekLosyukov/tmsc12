@@ -71,8 +71,8 @@
     </c:if>
 </div>
 
-<c:if test="${not empty orderProducts}">
-    <div class="container mt-3">
+<div class="container mt-3">
+    <c:if test="${not empty orderProducts}">
 
         <p>Купленные Вами товары:</p>
         <table class="table">
@@ -97,9 +97,10 @@
             </c:forEach>
             </tbody>
         </table>
+        Общая сумма купленных Вами товаров составляет ${orderTotalPrice} руб.
+    </c:if>
+</div>
 
-    </div>
-</c:if>
 
 </body>
 </html>

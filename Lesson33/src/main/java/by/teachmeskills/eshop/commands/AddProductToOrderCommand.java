@@ -3,15 +3,16 @@ package by.teachmeskills.eshop.commands;
 import by.teachmeskills.eshop.domain.Order;
 import by.teachmeskills.eshop.domain.Product;
 import by.teachmeskills.eshop.exceptions.CommandException;
-import by.teachmeskills.eshop.utils.PagesPathEnum;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class AddProductToOrderCommand implements BaseCommand {
+import static by.teachmeskills.eshop.utils.PagesPathEnum.CABINET_PAGE;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.*;
 
+public class AddProductToOrderCommand implements BaseCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException, ServletException, IOException {
 
@@ -26,18 +27,18 @@ public class AddProductToOrderCommand implements BaseCommand {
             order = (Order) objOrder;
         } else {
             order = new Order();
-            session.setAttribute("orderProducts", order);
+            session.setAttribute(ORDER.getValue(), order);
         }
 
         order.addProduct(product);
 
-        session.setAttribute("product", product);
-        return PagesPathEnum.CABINET_PAGE.getPath();
+        session.setAttribute(PRODUCT.getValue(), product);
+        session.setAttribute(ORDER_PRODUCTS.getValue(), order.getProducts());
+        session.setAttribute(ORDER_TOTAL_PRICE.getValue(), order.getTotalPrice());
+        return CABINET_PAGE.getPath();
     }
 
-
     protected Product getProductById(int id) {
-
         switch (id) {
             case 1 -> {
                 return new Product(1, "iPhone11", "Apple iOS, экран 6.1 inch IPS (828x1792), Apple A13 Bionic, ОЗУ 4 ГБ, флэш-память 64 ГБ, камера 12 Мп, аккумулятор 3046 мАч, 1 SIM", 2500, "iphone11.jpg");
@@ -57,7 +58,6 @@ public class AddProductToOrderCommand implements BaseCommand {
             case 6 -> {
                 return new Product(6, "Samsung S21", "Android, экран 6.2 inch AMOLED (1080x2400), Exynos 2100, ОЗУ 8 ГБ, флэш-память 256 ГБ, камера 64 Мп, аккумулятор 4000 мАч, 2 SIM", 3700, "samsungs21.jpg");
             }
-
             default -> System.out.println("Incorrect Id");
         }
         return null;

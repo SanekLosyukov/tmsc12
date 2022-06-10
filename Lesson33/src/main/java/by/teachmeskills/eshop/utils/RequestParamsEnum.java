@@ -1,19 +1,24 @@
 package by.teachmeskills.eshop.utils;
 
 public enum RequestParamsEnum {
+    ID("id"),
     NAME("name"),
     SURNAME("surname"),
     EMAIL("email"),
     DATE("date"),
+    USER("user"),
     PASSWORD("password"),
     COMMAND("command"),
-    CATEGORY("category"),
+    CATEGORIES("categories"),
+    PRODUCT("product"),
     PRODUCTS("products"),
     PRODUCTLIST("productList"),
-    SHOPPING_CART("cart"),
+    TOTALPRICE("totalPrice"),
+    CART("cart"),
     CART_PRODUCTS("cartProducts"),
-    CABINET("cabinet"),
-    SHOPPING_CART_PRODUCTS("cartProductsList"),
+    ORDER("order"),
+    ORDER_PRODUCTS("orderProducts"),
+    ORDER_TOTAL_PRICE("orderTotalPrice"),
     PRODUCT_ID("product_id");
 
     private final String value;

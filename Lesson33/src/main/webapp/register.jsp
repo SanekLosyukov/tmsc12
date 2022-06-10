@@ -13,9 +13,8 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <div class="container">
-    <%--    Put elements in the center of page
-    offset-md-4 - смещение на 4 колонки вправо--%>
-    <div class="col-md-8 offset-md-4">
+
+<div class="col-md-8 offset-md-4">
         <h2>Register</h2>
         <p>Please, enter your credentials</p>
         <form method="post" action="/register" class="needs-validation" novalidate>

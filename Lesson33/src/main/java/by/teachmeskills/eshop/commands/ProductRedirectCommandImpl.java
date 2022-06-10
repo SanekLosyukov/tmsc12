@@ -2,27 +2,28 @@ package by.teachmeskills.eshop.commands;
 
 import by.teachmeskills.eshop.domain.Product;
 import by.teachmeskills.eshop.exceptions.CommandException;
-import by.teachmeskills.eshop.utils.PagesPathEnum;
-import by.teachmeskills.eshop.utils.RequestParamsEnum;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
+import static by.teachmeskills.eshop.utils.PagesPathEnum.PRODUCT_PAGE;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.PRODUCTS;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.PRODUCT_ID;
 
 public class ProductRedirectCommandImpl implements BaseCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-
-        int id = Integer.parseInt(request.getParameter(RequestParamsEnum.PRODUCT_ID.getValue()));
+        HttpSession session = request.getSession();
+        int id = Integer.parseInt(request.getParameter(PRODUCT_ID.getValue()));
         List<Product> products = getProductsByCategoryId(id);
-        request.setAttribute(RequestParamsEnum.PRODUCTS.getValue(), products);
-        return PagesPathEnum.PRODUCT_PAGE.getPath();
+        request.setAttribute(PRODUCTS.getValue(), products);
+        return PRODUCT_PAGE.getPath();
     }
 
     protected static List<Product> getProductsByCategoryId(int id) {
         List<Product> products = new ArrayList<>();
-
         switch (id) {
             case 1 -> {
                 Product iphone11 = new Product(1, "iPhone11", "Apple iOS, экран 6.1 inch IPS (828x1792), Apple A13 Bionic, ОЗУ 4 ГБ, флэш-память 64 ГБ, камера 12 Мп, аккумулятор 3046 мАч, 1 SIM", 2500, "iphone11.jpg");
