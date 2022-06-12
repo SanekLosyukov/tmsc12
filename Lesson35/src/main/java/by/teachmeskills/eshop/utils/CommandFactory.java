@@ -20,6 +20,7 @@ public class CommandFactory {
         COMMAND_LIST.put(CommandsEnum.REDIRECT_SHOPPING_CART_COMMAND.getCommand(), new CartRedirectCommandImpl());
         COMMAND_LIST.put(CommandsEnum.REDIRECT_CABINET_COMMAND.getCommand(), new CabinetCommandImpl());
         COMMAND_LIST.put(CommandsEnum.REDIRECT_PRODUCT_COMMAND.getCommand(), new ProductRedirectCommandImpl());
+        COMMAND_LIST.put(CommandsEnum.REDIRECT_TO_SELECTED_PRODUCT.getCommand(), new SelectedProductPageCommand());
     }
 
     public static BaseCommand defineCommand(HttpServletRequest request) {

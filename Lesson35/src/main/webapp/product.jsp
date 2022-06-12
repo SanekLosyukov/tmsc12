@@ -60,8 +60,9 @@
                 </div>
 
                 <div class="col-sm-3 p-3">
-                    <a href="${contextPath}/eshop?command=add-product-to-cart&product_id=${product.getId()}" button
-                       type="submit" class="btn btn-success">Купить</a>
+                    <a href="${contextPath}/eshop?command=redirect-to-selected-product&product_id=${product.getId()}"
+                       button
+                       type="submit" class="btn btn-success">Просмотр товара</a>
                 </div>
 
             </c:forEach>

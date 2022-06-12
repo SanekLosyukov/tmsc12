@@ -40,29 +40,30 @@
     </div>
 </nav>
 
+
 <div class="container mt-3">
-    <h2>Производители </h2>
-    <p>Выберите подкатегорию</p>
-    <c:if test="${not empty subcategories}">
+    <h2>Выбранный продукт</h2>
+
+    <c:if test="${not empty selectedproducts}">
 
         <div class="row">
-            <c:forEach items="${subcategories}" var="product">
+            <c:forEach items="${selectedproducts}" var="product">
 
                 <div class="col-sm-2 p-3 ">
-                    <img class="card-img" style="width:150px;height:120px"
-                         src="${contextPath}/images/${product.getImageName()}" alt="Card image"> <br>
+                    <img class="card-img" style="width:130px;height:160px"
+                         src="${contextPath}/images/${product.getImageName()}" alt="Card image">
                 </div>
                 <div class="col-sm-6 p-3">
-                    <a href="${contextPath}/eshop?command=product-redirect&product_id=${product.getId()}">
-                        <h4>${product.getName()}</h4></a><br>
-                    <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
+                    <a><h4>Название: ${product.getName()}</h4></a><br>
+                    <a><h4>Цена: ${product.getPrice()} руб.</h4></a><br>
                 </div>
-                <div class="col-sm-3 p-3">
 
+                <div class="col-sm-3 p-3">
+                    <a href="${contextPath}/eshop?command=add-product-to-cart&product_id=${product.getId()}" button
+                       type="submit" class="btn btn-success">Купить</a>
                 </div>
             </c:forEach>
         </div>
-
     </c:if>
 </div>
 </body>

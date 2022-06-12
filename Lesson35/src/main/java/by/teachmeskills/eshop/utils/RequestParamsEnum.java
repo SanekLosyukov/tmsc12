@@ -12,7 +12,7 @@ public enum RequestParamsEnum {
     CATEGORIES("categories"),
     PRODUCT("product"),
     PRODUCTS("products"),
-    PRODUCTLIST("productList"),
+    SUBCATEGORIES("subcategories"),
     TOTALPRICE("totalPrice"),
     CART("cart"),
     CART_PRODUCTS("cartProducts"),

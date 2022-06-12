@@ -14,6 +14,7 @@ import java.util.List;
 public class Category {
     private int id;
     private String name;
+    private String description;
     private String imageName;
     private List<Product> productList;
 
@@ -23,8 +24,11 @@ public class Category {
         this.imageName = imageName;
     }
 
-    public Category(String name, String imageName) {
+    public Category(int id, String name, String description, String imageName) {
+        this.id = id;
         this.name = name;
+        this.description = description;
         this.imageName = imageName;
     }
+
 }

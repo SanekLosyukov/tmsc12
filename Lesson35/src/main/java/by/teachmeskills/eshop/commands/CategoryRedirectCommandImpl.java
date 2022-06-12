@@ -1,7 +1,8 @@
 package by.teachmeskills.eshop.commands;
 
-import by.teachmeskills.eshop.domain.Product;
+import by.teachmeskills.eshop.domain.Category;
 import by.teachmeskills.eshop.exceptions.CommandException;
+import by.teachmeskills.eshop.utils.CRUDUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import static by.teachmeskills.eshop.utils.PagesPathEnum.CATEGORY_PAGE;
 import static by.teachmeskills.eshop.utils.RequestParamsEnum.ID;
-import static by.teachmeskills.eshop.utils.RequestParamsEnum.PRODUCTLIST;
+import static by.teachmeskills.eshop.utils.RequestParamsEnum.SUBCATEGORIES;
 
 public class CategoryRedirectCommandImpl implements BaseCommand {
 
@@ -18,34 +19,27 @@ public class CategoryRedirectCommandImpl implements BaseCommand {
     public String execute(HttpServletRequest request) throws CommandException {
         HttpSession session = request.getSession();
         int id = Integer.parseInt(request.getParameter(ID.getValue()));
-        List<Product> products = getProductsByCategoryId(id);
-        session.setAttribute(PRODUCTLIST.getValue(), products);
+        List<Category> subcategories = CRUDUtils.getAllSubcategories();
+        List<Category> getSubcategories = getSubcategoriesById(id, subcategories);
+        session.setAttribute(SUBCATEGORIES.getValue(), getSubcategories);
+
         return CATEGORY_PAGE.getPath();
     }
 
-    private List<Product> getProductsByCategoryId(int id) {
-        List<Product> products = new ArrayList<>();
+    private List<Category> getSubcategoriesById(int id, List<Category> subcategories) {
+        List<Category> getSubcategories = new ArrayList<>();
         switch (id) {
             case 1 -> {
-                Product iphone = new Product(1, "iPhone", "World famous phones from Apple", "iphone.jpg");
-                Product samsung = new Product(2, "Samsung", "Korean phone manufacturer", "samsung.jpg");
-                products.add(iphone);
-                products.add(samsung);
+                getSubcategories = subcategories.subList(0, 2);
             }
             case 2 -> {
-                Product huawei = new Product(3, "Huawei", "15 inch display, new model", "huawei.jpg");
-                Product xiaomi = new Product(4, "Xiaomi", "17 inch display, Battery 6000 mAh", "xiaomi.jpg");
-                products.add(huawei);
-                products.add(xiaomi);
+                getSubcategories = subcategories.subList(2, 4);
             }
             case 3 -> {
-                Product bosch = new Product(5, "Bosch", "5 years warranty", "bosch.jpg");
-                Product atlant = new Product(6, "Atlant", "Made in Belarus", "atlant.jpg");
-                products.add(bosch);
-                products.add(atlant);
+                getSubcategories = subcategories.subList(4, 6);
             }
             default -> System.out.println("Incorrect Id");
         }
-        return products;
+        return getSubcategories;
     }
 }

@@ -10,7 +10,8 @@ public enum CommandsEnum {
     REDIRECT_CABINET_COMMAND("redirect-to-cabinet"),
     ADD_PRODUCT_TO_CART("add-product-to-cart"),
     REMOVE_PRODUCT_FROM_CART("remove-product-from-cart"),
-    ADD_PRODUCT_TO_ORDER("add-product-to-order");
+    ADD_PRODUCT_TO_ORDER("add-product-to-order"),
+    REDIRECT_TO_SELECTED_PRODUCT("redirect-to-selected-product");
 
     private final String command;
 
