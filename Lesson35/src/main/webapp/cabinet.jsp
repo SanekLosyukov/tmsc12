@@ -33,8 +33,9 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Введите название товара">
-                <button class="btn btn-primary" type="button">Найти</button>
+                <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара">
+                <a href="${contextPath}/eshop?command=redirect-to-search"
+                   button class="btn btn-primary" type="submit">Найти</a>
             </form>
         </div>
     </div>

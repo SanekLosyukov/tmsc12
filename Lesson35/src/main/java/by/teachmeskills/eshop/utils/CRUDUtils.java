@@ -1,6 +1,7 @@
 package by.teachmeskills.eshop.utils;
 
 import by.teachmeskills.eshop.domain.Category;
+import by.teachmeskills.eshop.domain.Image;
 import by.teachmeskills.eshop.domain.Product;
 import by.teachmeskills.eshop.domain.User;
 
@@ -16,7 +17,9 @@ public class CRUDUtils {
     private static final String INSERT_USER_QUERY = "INSERT INTO users (name, surname, email, password, date) VALUES(?, ?, ?, ?, ?)";
     private static final String GET_ALL_CATEGORIES = "SELECT * FROM categories, images WHERE images.category_id = categories.id";
     private static final String GET_ALL_SUBCATEGORIES = "SELECT * FROM subcategories, images WHERE images.subcategory_id = subcategories.id";
-    private static final String GET_ALL_PRODUCTS = "SELECT * FROM products, images WHERE images.product_id = products.id";
+    private static final String GET_ALL_PRODUCTS = "SELECT * FROM products, images WHERE images.product_id = products.id AND images.primary_flag = 1";
+    private static final String GET_ALL_SECONDARY_IMAGES = "SELECT * FROM products, images WHERE images.product_id = products.id AND images.primary_flag = 0";
+    private static final String SEARCH_BY_NAME_OR_DESCRIPTION = "SELECT * FROM products WHERE name or description LIKE VALUES(?)";
 
     public static List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
@@ -108,4 +111,62 @@ public class CRUDUtils {
         return products;
     }
 
+    public static List<Product> getAllProductsWithAllImages() {
+        List<Product> products = new ArrayList<>();
+        try (Connection connection = DbUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_PRODUCTS);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+                int price = rs.getInt("price");
+                String image = rs.getString("image");
+                List<Image> secondaryImages = getAllSecondaryImages(productId);
+                products.add(new Product(productId, name, description, price, image, secondaryImages));
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return products;
+    }
+
+    public static List<Image> getAllSecondaryImages(int id) {
+        List<Image> secondaryImages = new ArrayList<>();
+        try (Connection connection = DbUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_SECONDARY_IMAGES);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                boolean flag = rs.getBoolean("primary_flag");
+                String image = rs.getString("image");
+                if (id == productId) {
+                    secondaryImages.add(new Image(flag, image));
+                }
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return secondaryImages;
+    }
+
+    public static List<Product> getSearchFromDB(String search) {
+        List<Product> searchedProducts = new ArrayList<>();
+        try (Connection connection = DbUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BY_NAME_OR_DESCRIPTION);
+            preparedStatement.setString(1, search);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int productId = rs.getInt("product_id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+                int price = rs.getInt("price");
+                String image = rs.getString("image");
+                searchedProducts.add(new Product(productId, name, description, price, image));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return searchedProducts;
+    }
 }

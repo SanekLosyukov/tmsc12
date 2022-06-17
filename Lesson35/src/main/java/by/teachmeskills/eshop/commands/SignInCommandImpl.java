@@ -32,13 +32,6 @@ public class SignInCommandImpl implements BaseCommand {
                 session.setAttribute(USER.getValue(), validateUser);
 
                 List<Category> categories = CRUDUtils.getAllCategories();
-//                Category mobilePhones = new Category(1, "Mobile phones", "mobile.jpg");
-//                Category laptops = new Category(2, "Laptops", "laptop.jpg");
-//                Category fridges = new Category(3, "Fridges", "fridge.jpg");
-//                categories.add(mobilePhones);
-//                categories.add(laptops);
-//                categories.add(fridges);
-
                 session.setAttribute(CATEGORIES.getValue(), categories);
 
                 return HOME_PAGE.getPath();

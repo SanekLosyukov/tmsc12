@@ -33,8 +33,9 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Введите название товара">
-                <button class="btn btn-primary" type="button">Найти</button>
+                <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара">
+                <a href="${contextPath}/eshop?command=redirect-to-search"
+                   button class="btn btn-primary" type="submit">Найти</a>
             </form>
         </div>
     </div>
@@ -55,14 +56,12 @@
                 </div>
                 <div class="col-sm-6 p-3">
                     <a><h4>${product.getName()}</h4></a><br>
-                    <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
                     <a><h5>Цена: ${product.getPrice()} руб.</h5></a><br>
                 </div>
 
                 <div class="col-sm-3 p-3">
                     <a href="${contextPath}/eshop?command=redirect-to-selected-product&product_id=${product.getId()}"
-                       button
-                       type="submit" class="btn btn-success">Просмотр товара</a>
+                       button type="submit" class="btn btn-success">Просмотр товара</a>
                 </div>
 
             </c:forEach>

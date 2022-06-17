@@ -45,26 +45,64 @@
     <h2>Выбранный продукт</h2>
 
     <c:if test="${not empty selectedproducts}">
-
-        <div class="row">
-            <c:forEach items="${selectedproducts}" var="product">
-
-                <div class="col-sm-2 p-3 ">
-                    <img class="card-img" style="width:130px;height:160px"
-                         src="${contextPath}/images/${product.getImageName()}" alt="Card image">
-                </div>
-                <div class="col-sm-6 p-3">
-                    <a><h4>Название: ${product.getName()}</h4></a><br>
-                    <a><h4>Цена: ${product.getPrice()} руб.</h4></a><br>
-                </div>
-
-                <div class="col-sm-3 p-3">
-                    <a href="${contextPath}/eshop?command=add-product-to-cart&product_id=${product.getId()}" button
-                       type="submit" class="btn btn-success">Купить</a>
-                </div>
-            </c:forEach>
-        </div>
+    <div class="row">
+        <c:forEach items="${selectedproducts}" var="product">
+            <div class="col-sm-2 p-3 ">
+                <img class="card-img" style="width:130px;height:160px"
+                     src="${contextPath}/images/${product.getImageName()}" alt="Card image">
+            </div>
+            <div class="col-sm-6 p-3">
+                <a><h4>Название: ${product.getName()}</h4></a><br>
+                <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
+                <a><h4>Цена: ${product.getPrice()} руб.</h4></a><br>
+            </div>
+            <div class="col-sm-3 p-3">
+                <a href="${contextPath}/eshop?command=add-product-to-cart&product_id=${product.getId()}" button
+                   type="submit" class="btn btn-success">Купить</a>
+            </div>
+        </c:forEach>
+    </div>
     </c:if>
-</div>
+
+    <!-- Carousel -->
+    <c:if test="${not empty images}">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <c:forEach items="${images}" var="image">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="${contextPath}/images/${image.getImageName()}" alt="Photo" class="d-block"
+                         style="width:10%">
+                </div>
+                    <%--                <div class="carousel-item">--%>
+                    <%--                    <img src="${contextPath}/images/${image.getImageName()}" alt="Photo" class="d-block"--%>
+                    <%--                </div>--%>
+                    <%--                <div class="carousel-item">--%>
+                    <%--                    <img src="${contextPath}/images/${image.getImageName()}" alt="Photo" class="d-block"--%>
+                    <%--                </div>--%>
+            </div>
+        </c:forEach>
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <div class="container-fluid mt-3">
+            <p>Все изображения продукта</p>
+        </div>
+
+        </c:if>
+    </div>
 </body>
 </html>

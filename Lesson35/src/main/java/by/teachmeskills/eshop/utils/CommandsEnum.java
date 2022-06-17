@@ -11,7 +11,8 @@ public enum CommandsEnum {
     ADD_PRODUCT_TO_CART("add-product-to-cart"),
     REMOVE_PRODUCT_FROM_CART("remove-product-from-cart"),
     ADD_PRODUCT_TO_ORDER("add-product-to-order"),
-    REDIRECT_TO_SELECTED_PRODUCT("redirect-to-selected-product");
+    REDIRECT_TO_SELECTED_PRODUCT("redirect-to-selected-product"),
+    REDIRECT_TO_SEARCH("redirect-to-search");
 
     private final String command;
 
