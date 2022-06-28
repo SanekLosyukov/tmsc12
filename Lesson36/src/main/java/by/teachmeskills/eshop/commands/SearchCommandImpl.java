@@ -13,11 +13,9 @@ public class SearchCommandImpl implements BaseCommand {
     @Override
     public String execute(HttpServletRequest request) throws CommandException, ServletException, IOException {
         String search = request.getParameter("search");
-
         ProductServiceImpl productService = new ProductServiceImpl();
         List<Product> products = productService.getSearchFromDB(search);
         request.setAttribute("products", products);
-
         return "/product.jsp";
     }
 }

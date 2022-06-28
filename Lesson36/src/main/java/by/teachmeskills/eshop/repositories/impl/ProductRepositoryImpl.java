@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ProductRepositoryImpl implements ProductRepository {
     private static final String GET_ALL_PRODUCTS = "SELECT * FROM products, images WHERE images.product_id = products.id AND images.primary_flag = 1";
-    private static final String SEARCH_BY_NAME_OR_DESCRIPTION = "SELECT * FROM products WHERE name or description LIKE VALUES(?)";
+    private static final String SEARCH_BY_NAME_OR_DESCRIPTION = "SELECT * FROM ESHOP.PRODUCTS WHERE DESCRIPTION LIKE ? OR NAME LIKE ?";
 
     @Override
     public Product create(Product entity) {
@@ -23,7 +23,8 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> read() {
         List<Product> products = new ArrayList<>();
-        try (Connection connection = pool.getConnection()) {
+        try {
+            Connection connection = pool.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_PRODUCTS);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -59,7 +60,8 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> getAllProductsWithAllImages() {
         List<Product> products = new ArrayList<>();
-        try (Connection connection = pool.getConnection()) {
+        try {
+            Connection connection = pool.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(GET_ALL_PRODUCTS);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -89,9 +91,12 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Override
     public List<Product> getSearchFromDB(String search) {
         List<Product> searchedProducts = new ArrayList<>();
-        try (Connection connection = pool.getConnection()) {
+        String setSearch = "%" + search + "%";
+        try {
+            Connection connection = pool.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BY_NAME_OR_DESCRIPTION);
-            preparedStatement.setString(1, search);
+            preparedStatement.setString(1, setSearch);
+            preparedStatement.setString(2, setSearch);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 int productId = rs.getInt("product_id");

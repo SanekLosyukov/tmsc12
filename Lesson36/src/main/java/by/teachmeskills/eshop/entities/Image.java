@@ -9,7 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Image extends BaseEntity{
+public class Image extends BaseEntity {
     private boolean flag;
     private String imageName;
     private List<Image> images;

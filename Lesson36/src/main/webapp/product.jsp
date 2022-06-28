@@ -32,10 +32,11 @@
                     <a class="nav-link" href="${contextPath}/eshop?command=redirect-to-shopping-cart">Корзина</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара">
-                <a href="${contextPath}/eshop?command=redirect-to-search"
-                   button class="btn btn-primary" type="submit">Найти</a>
+            <form method="post" action="${contextPath}/eshop?command=redirect-to-search" class="d-flex">
+                <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара"
+                       name="search"
+                       required>
+                <button class="btn btn-primary" type="button">Найти</button>
             </form>
         </div>
     </div>
