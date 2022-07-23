@@ -20,7 +20,6 @@ import static by.teachmeskills.eshop.PagesPathEnum.SIGN_IN_PAGE;
 @RequestMapping("/login")
 public class AuthController {
     private final UserService userService;
-
     public AuthController(UserService userService) {
         this.userService = userService;
     }

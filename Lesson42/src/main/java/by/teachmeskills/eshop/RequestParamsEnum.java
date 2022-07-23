@@ -10,6 +10,7 @@ public enum RequestParamsEnum {
     POPULAR_CATEGORIES_LIST_REQ_PARAM("categories"),
     CATEGORY_PARAM("category"),
     PRODUCT_ID("product_id"),
+    SECONDARY_IMAGES("secondary_images"),
     SEARCHED_PRODUCTS("searchedProducts"),
     ERROR_PARAM("error");
 

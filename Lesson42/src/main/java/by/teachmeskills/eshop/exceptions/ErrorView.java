@@ -11,6 +11,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface ErrorView {
     String value();
-
     HttpStatus status() default HttpStatus.INTERNAL_SERVER_ERROR;
 }

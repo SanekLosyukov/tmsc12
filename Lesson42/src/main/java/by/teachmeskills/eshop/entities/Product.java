@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,4 +19,5 @@ public class Product extends BaseEntity {
     private int price;
     private int categoryId;
     private String imagePath;
+    private List<Image> secondaryImages;
 }

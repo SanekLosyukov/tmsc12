@@ -32,7 +32,7 @@
                     <a class="nav-link" href="${contextPath}/cart/open">Корзина</a>
                 </li>
             </ul>
-            <form method="post" action="${contextPath}/eshop?command=redirect-to-search" class="d-flex">
+            <form method="post" action="${contextPath}/search" class="d-flex">
                 <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара"
                        name="search"
                        required>
@@ -42,40 +42,29 @@
     </div>
 </nav>
 
-
 <div class="container mt-3">
-    <h2>Корзина </h2>
-
+    <h2>${category.getName()}</h2>
 
     <div class="row">
-        <c
-        <c:forEach items="${sessionScope.cart.getProducts()}" var="product">
+        <c:forEach items="${category.getProductList()}" var="product">
 
             <div class="col-sm-2 p-3 ">
-                <img class="card-img" style="width:130px;height:160px"
-                     src="${contextPath}/images/${product.getImagePath()}" alt="Card image">
+                <a href="${contextPath}/product/${product.getId()}">
+                    <img class="card-img" style="width:100px;height:120px"
+                         src="${contextPath}/images/${product.getImagePath()}" alt="Card image">
+                </a>
+                <br>
             </div>
             <div class="col-sm-6 p-3">
-                <a><h4>Название: ${product.getName()}</h4></a><br>
-                <a><h4>Цена: ${product.getPrice()} руб.</h4></a><br>
-
+                <a href="${contextPath}/product/${product.getId()}">${product.getName()}</a>
+                <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
             </div>
-
             <div class="col-sm-3 p-3">
-                <a href="${contextPath}/cabinet/add?product_id=${product.getId()}" button
-                   type="submit"
-                   class="btn btn-success">Оформить</a>
-                <br>
-                <a href="${contextPath}/cart/remove?product_id=${product.getId()}" button
-                   type="submit" class="btn btn-success">Удалить</a>
+
             </div>
-
         </c:forEach>
-        <h4>Общая сумма добавленных в корзину товаров: ${cart.totalPrice} руб.</h4>
     </div>
-
 
 </div>
 </body>
 </html>
-

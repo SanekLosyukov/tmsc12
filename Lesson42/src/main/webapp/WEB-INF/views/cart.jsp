@@ -32,7 +32,7 @@
                     <a class="nav-link" href="${contextPath}/cart/open">Корзина</a>
                 </li>
             </ul>
-            <form method="post" action="${contextPath}/eshop?command=redirect-to-search" class="d-flex">
+            <form method="post" action="${contextPath}/search" class="d-flex">
                 <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара"
                        name="search"
                        required>
@@ -44,64 +44,38 @@
 
 
 <div class="container mt-3">
-    <h2>Кабинет пользователя </h2>
-
-    <c:if test="${not empty user}">
-
-        <div class="container mt-3">
-            <p>Добрый день, рады вас видеть. Ваши данные:</p>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Email</th>
-                    <th>Дата рождения</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>${user.getName()}</td>
-                    <td>${user.getSurname()}</td>
-                    <td>${user.getEmail()}</td>
-                    <td>${user.getDate()}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </c:if>
-</div>
-
-<div class="container mt-3">
+    <h2>Корзина </h2>
 
 
-    <p>Купленные Вами товары:</p>
-    <table class="table">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Название товара</th>
-            <th>Описание</th>
-            <th>Стоимость</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         <c
-        <c:forEach items="${sessionScope.order.getProducts()}" var="product">
-            <tr>
-                <td><img class="card-img" style="width:65px;height:80px"
-                         src="${contextPath}/images/${product.getImagePath()}" alt="Card image"></td>
-                <td>${product.getName()}</td>
-                <td>${product.getDescription()}</td>
-                <td>${product.getPrice()}</td>
-            </tr>
+        <c:forEach items="${sessionScope.cart.getProducts()}" var="product">
+
+            <div class="col-sm-2 p-3 ">
+                <img class="card-img" style="width:130px;height:160px"
+                     src="${contextPath}/images/${product.getImagePath()}" alt="Card image">
+            </div>
+            <div class="col-sm-6 p-3">
+                <a><h4>Название: ${product.getName()}</h4></a><br>
+                <a><h4>Цена: ${product.getPrice()} руб.</h4></a><br>
+
+            </div>
+
+            <div class="col-sm-3 p-3">
+                <a href="${contextPath}/cabinet/add?product_id=${product.getId()}" button
+                   type="submit"
+                   class="btn btn-success">Оформить</a>
+                <br>
+                <a href="${contextPath}/cart/remove?product_id=${product.getId()}" button
+                   type="submit" class="btn btn-success">Удалить</a>
+            </div>
 
         </c:forEach>
-        </tbody>
-    </table>
-    <h4>Общая сумма купленных Вами товаров составляет ${order.totalPrice} руб.</h4>
+        <h4>Общая сумма добавленных в корзину товаров: ${cart.totalPrice} руб.</h4>
+    </div>
+
 
 </div>
 </body>
 </html>
+

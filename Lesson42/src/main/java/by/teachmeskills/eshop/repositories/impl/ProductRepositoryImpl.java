@@ -14,7 +14,6 @@ import java.util.List;
 public class ProductRepositoryImpl implements ProductRepository {
     private final JdbcTemplate jdbcTemplate;
     private static String GET_ALL_PRODUCTS_BY_CATEGORY_ID = "SELECT * FROM products, images WHERE products.category_id = ? AND images.product_id = products.id AND images.primary_flag = 1";
-
     private static String GET_PRODUCT_BY_ID = "SELECT * FROM products, images WHERE products.id = ? AND images.product_id = products.id AND images.primary_flag = 1";
     private static final String SEARCH_BY_NAME_OR_DESCRIPTION = "SELECT * FROM products WHERE products.name LIKE ? OR products.description LIKE ?";
 
@@ -39,7 +38,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public void delete(int id) {
-
     }
 
     @Override
@@ -63,8 +61,7 @@ public class ProductRepositoryImpl implements ProductRepository {
                 .name(rs.getString("name"))
                 .description(rs.getString("description"))
                 .price(rs.getInt("price"))
-                .imagePath(rs.getString("image_path"))
-                .categoryId(rs.getInt("category_id"))
+                .imagePath(rs.getString("image"))
                 .build(), categoryId);
     }
 

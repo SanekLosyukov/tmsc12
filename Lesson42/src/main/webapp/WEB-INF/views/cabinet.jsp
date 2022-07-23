@@ -32,7 +32,7 @@
                     <a class="nav-link" href="${contextPath}/cart/open">Корзина</a>
                 </li>
             </ul>
-            <form method="post" action="${contextPath}/eshop?command=redirect-to-search" class="d-flex">
+            <form method="post" action="${contextPath}/search" class="d-flex">
                 <input class="form-control me-2" id="search" type="text" placeholder="Введите название товара"
                        name="search"
                        required>
@@ -42,25 +42,65 @@
     </div>
 </nav>
 
+
 <div class="container mt-3">
-    <h2>${category.getName()}</h2>
+    <h2>Кабинет пользователя </h2>
 
-    <div class="row">
-        <c:forEach items="${category.getProductList()}" var="product">
+    <c:if test="${not empty user}">
 
-            <div class="col-sm-2 p-3 ">
-                <img class="card-img" style="width:150px;height:120px"
-                     src="${contextPath}/images/${product.getImagePath()}" alt="Card image"> <br>
-            </div>
-            <div class="col-sm-6 p-3">
-                <a href="${contextPath}/product/${product.getId()}">${product.getName()}</a>
-                <a><h5>Описание:</h5> <h6> ${product.getDescription()}</h6></a><br>
-            </div>
-            <div class="col-sm-3 p-3">
+        <div class="container mt-3">
+            <p>Добрый день, рады вас видеть. Ваши данные:</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Email</th>
+                    <th>Дата рождения</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>${user.getName()}</td>
+                    <td>${user.getSurname()}</td>
+                    <td>${user.getEmail()}</td>
+                    <td>${user.getDate()}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-            </div>
+    </c:if>
+</div>
+
+<div class="container mt-3">
+
+
+    <p><h5>Купленные Вами товары:</h5></p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Название товара</th>
+            <th>Описание</th>
+            <th>Стоимость</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c
+        <c:forEach items="${sessionScope.order.getProducts()}" var="product">
+            <tr>
+                <td><img class="card-img" style="width:65px;height:80px"
+                         src="${contextPath}/images/${product.getImagePath()}" alt="Card image"></td>
+                <td>${product.getName()}</td>
+                <td>${product.getDescription()}</td>
+                <td>${product.getPrice()}</td>
+            </tr>
+
         </c:forEach>
-    </div>
+        </tbody>
+    </table>
+    <h5>Общая сумма купленных Вами товаров составляет ${order.totalPrice} руб.</h5>
 
 </div>
 </body>
