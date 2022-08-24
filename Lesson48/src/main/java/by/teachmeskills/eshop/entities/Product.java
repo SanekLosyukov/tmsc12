@@ -38,17 +38,13 @@ public class Product extends BaseEntity {
     @Column(name = "PRICE")
     private int price;
 
-    @Column(name = "MAIN_IMAGE")  //главная картинка
+    @Column(name = "MAIN_IMAGE")
     private String mainImage;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CATEGORY_ID", nullable = false)
     private Category category;
 
-//    @ManyToMany(mappedBy = "productList", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<Order> orders;
-
     @OneToMany(mappedBy = "product", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<ProductImage> imagePath;    // второстепенные картинки
-
+    private List<ProductImage> imagePath;
 }

@@ -82,8 +82,6 @@ public class CategoryController {
     }
 
     @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED) //Or we can use @ResponseStatus(HttpStatus.CREATED) annotation with appropriate status code to show the result
-//    public void createCategory(@RequestBody CategoryDto categoryDto) {
     public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto) {
         CategoryDto created = categoryService.createCategory(categoryDto);
         if (Optional.ofNullable(created).isPresent()) {

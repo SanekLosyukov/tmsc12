@@ -20,6 +20,13 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public List<Product> read() {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Product> query = session.createQuery("select p from Product p");
+        return query.list();
+    }
+
+    @Override
     public Product findById(int id) throws Exception {
         log.info(String.format("Method UserServiceImpl#findById(%s) is called", id));
         Session session = sessionFactory.getCurrentSession();
@@ -43,4 +50,5 @@ public class ProductRepositoryImpl implements ProductRepository {
         List<Product> searchedProducts = query.list();
         return searchedProducts;
     }
+
 }

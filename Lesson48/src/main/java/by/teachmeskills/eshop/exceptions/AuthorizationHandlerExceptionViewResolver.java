@@ -28,8 +28,6 @@ public class AuthorizationHandlerExceptionViewResolver implements HandlerExcepti
                 return model;
             }
         }
-
-        //returning null for default processing
         return null;
     }
 }
